@@ -1,12 +1,9 @@
-# St.-Joseph-Bazaar Team Contract
-CSCI 340 Final Project - This is a website/Database that with help St. Joseph Bazaar find a way to better organize all the finances related to the St. Joseph Bazaar fundraising activity.
-
 # **Team Contract**
 A **Team Contract** is a document prepared by each team prior to starting work on group projects. Students should be held accountable and responsible for their own actions. Students will develop their own "rules of engagement" through development of a Team Contract. This contract provides an opportunity for your group to specify preferred methods of communication, action plans, meeting schedules, goals, and consequences of actions (or inactions) of group members. The contract should be developed and signed BEFORE starting the actual course project. **For the Team Contract to be valid, provide the signed and dated original contract to me by the specified deadline on your course schedule. Give a photocopy of the original to each group member for their records.**  This document is more for your group than it is for me so feel free to tailor it to your group's needs.
 
 
 
-![](Aspose.Words.de9dc58b-bdea-4452-addd-022cc44e7a66.001.png)
+![](Aspose.Words.b7f6643b-cf8d-4184-93c2-6bd25e7a2a4b.001.png)
 ## **Project Team Name: St. Joseph Bazaar**
 
 
@@ -41,7 +38,7 @@ A **Team Contract** is a document prepared by each team prior to starting work o
 
 **Communication with Teams messages**
 Page 4 of 4
-![](Aspose.Words.de9dc58b-bdea-4452-addd-022cc44e7a66.002.png)
+![](Aspose.Words.b7f6643b-cf8d-4184-93c2-6bd25e7a2a4b.002.png)
 
 1. # **Team Procedures:**
 1. Method for setting and following meeting agendas (Who will set each agenda? When? How will team members be notified/reminded? Who will be responsible for the team following the agenda during a team meeting?):
@@ -120,7 +117,7 @@ In appending your signatures below, you are stating that:
 | :- | :- | -: | :- |
 |Signature:|Caden McCarty|Date:|9/29/23|
 |Signature:|Tucker M. Groves-Benedict|Date:|9/29/23|
-|Signature:|T|Date:||
+|Signature:|Taryn England|Date:|9/29/2023|
 
 1. **Individual Paragraphs:**
 
@@ -136,3 +133,7 @@ I am going to be responsible for Framework / Deployment of the website.  Making 
 **Tucker M. Groves-Benedict:**
 
 I am going to be primarily responsible for the JavaScript and Ajax programming, I will be adding functionality to the various elements of the website. In addition to this role, I will assist with any tasks as needed to produce a high-quality final product. I will endeavor to hold myself and my teammates accountable to keep up with our work.
+
+**Taryn England**
+
+I will be working primarily as a front-end HTML and CSS programmer. I plan to aid in other tasks as needed to ensure that the project comes along nicely, and we aren’t struggling to keep on track with all that needs to be done.
