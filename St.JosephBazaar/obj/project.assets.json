@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\caden\\.nuget\\packages\\": {}
+    "/Users/johnlyon/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\caden\\OneDrive\\Databases\\St.-Joseph-Bazaar\\St.JosephBazaar\\St.JosephBazaar.csproj",
+      "projectUniqueName": "/Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/St.JosephBazaar.csproj",
       "projectName": "St.JosephBazaar",
-      "projectPath": "C:\\Users\\caden\\OneDrive\\Databases\\St.-Joseph-Bazaar\\St.JosephBazaar\\St.JosephBazaar.csproj",
-      "packagesPath": "C:\\Users\\caden\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\caden\\OneDrive\\Databases\\St.-Joseph-Bazaar\\St.JosephBazaar\\obj\\",
+      "projectPath": "/Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/St.JosephBazaar.csproj",
+      "packagesPath": "/Users/johnlyon/.nuget/packages/",
+      "outputPath": "/Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\caden\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/johnlyon/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -62,7 +62,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }
