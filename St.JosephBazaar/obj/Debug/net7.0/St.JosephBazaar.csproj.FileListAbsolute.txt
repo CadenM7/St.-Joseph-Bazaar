@@ -28,3 +28,33 @@
 /Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/obj/Debug/net7.0/St.JosephBazaar.pdb
 /Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/obj/Debug/net7.0/St.JosephBazaar.genruntimeconfig.cache
 /Users/johnlyon/St.-Joseph-Bazaar/St.JosephBazaar/obj/Debug/net7.0/ref/St.JosephBazaar.dll
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\appsettings.Development.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\appsettings.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.staticwebassets.runtime.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.exe
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.deps.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.runtimeconfig.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.dll
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\bin\Debug\net7.0\St.JosephBazaar.pdb
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.AssemblyInfoInputs.cache
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.AssemblyInfo.cs
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.csproj.CoreCompileInputs.cache
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.RazorAssemblyInfo.cache
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.RazorAssemblyInfo.cs
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets\msbuild.St.JosephBazaar.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets\msbuild.build.St.JosephBazaar.props
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.St.JosephBazaar.props
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.St.JosephBazaar.props
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets.pack.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets.build.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\staticwebassets.development.json
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\scopedcss\bundle\St.JosephBazaar.styles.css
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\scopedcss\projectbundle\St.JosephBazaar.bundle.scp.css
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.dll
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\refint\St.JosephBazaar.dll
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.pdb
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\St.JosephBazaar.genruntimeconfig.cache
+C:\Users\tmgro\OneDrive\Desktop\DatabaseAndWebSystems\HTML Learning\St.-Joseph-Bazaar\St.JosephBazaar\obj\Debug\net7.0\ref\St.JosephBazaar.dll
