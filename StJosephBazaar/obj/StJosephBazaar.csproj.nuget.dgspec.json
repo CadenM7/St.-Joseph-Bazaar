@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
+    "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\StJosephBazaar\\StJosephBazaar.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\RazorPagesMovie\\RazorPagesMovie.csproj": {
+    "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\StJosephBazaar\\StJosephBazaar.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\RazorPagesMovie\\RazorPagesMovie.csproj",
-        "projectName": "RazorPagesMovie",
-        "projectPath": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectUniqueName": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\StJosephBazaar\\StJosephBazaar.csproj",
+        "projectName": "StJosephBazaar",
+        "projectPath": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\StJosephBazaar\\StJosephBazaar.csproj",
         "packagesPath": "C:\\Users\\tmgro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\RazorPagesMovie\\obj\\",
+        "outputPath": "C:\\Users\\tmgro\\OneDrive\\Documents\\GitHub\\St.-Joseph-Bazaar\\StJosephBazaar\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tmgro\\AppData\\Roaming\\NuGet\\NuGet.Config",
