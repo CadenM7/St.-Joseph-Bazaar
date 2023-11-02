@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using StJosephBazaar.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<BazaarContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("BazaarContext") ?? throw new InvalidOperationException("Connection string 'BazaarContext' not found.")));
 
 var app = builder.Build();
 

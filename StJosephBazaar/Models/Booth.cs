@@ -1,12 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace StJosephBazaar.Models{
+namespace StJosephBazaar.Models;
 
-public class Movie
+public class Booth
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    [DataType(DataType.Date)]
+    public string? Name { get; set; }
     public decimal StartupTotal { get; set; }
-}
 }
