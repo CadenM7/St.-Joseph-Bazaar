@@ -54,9 +54,6 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("Tens")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("TEXT");
-
                     b.Property<int>("Twenties")
                         .HasColumnType("INTEGER");
 

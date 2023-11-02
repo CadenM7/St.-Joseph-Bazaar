@@ -10,7 +10,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231102203556_InitialCreate")]
+    [Migration("20231102210154_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -56,9 +56,6 @@ namespace StJosephBazaar.Migrations
 
                     b.Property<int>("Tens")
                         .HasColumnType("INTEGER");
-
-                    b.Property<decimal>("Total")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("Twenties")
                         .HasColumnType("INTEGER");

@@ -35,8 +35,7 @@ namespace StJosephBazaar.Migrations
                     Tens = table.Column<int>(type: "INTEGER", nullable: false),
                     Fives = table.Column<int>(type: "INTEGER", nullable: false),
                     Ones = table.Column<int>(type: "INTEGER", nullable: false),
-                    Quarters = table.Column<int>(type: "INTEGER", nullable: false),
-                    Total = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Quarters = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

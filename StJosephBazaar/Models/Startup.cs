@@ -12,5 +12,10 @@ public class Startup
     public int Fives { get; set; }
     public int Ones { get; set; }
     public int Quarters { get; set; }
-    public decimal Total { get; set; }
+    public decimal Total {
+        get
+        {
+            return (decimal)(Twenties * 20 + Tens * 10 + Fives * 5 + Ones + Quarters * .25);
+        }
+    }
 }
