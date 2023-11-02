@@ -32,6 +32,38 @@ namespace StJosephBazaar.Migrations
 
                     b.ToTable("Booth");
                 });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Startup", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BoothName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Fives")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Ones")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quarters")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Tens")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Twenties")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Startup");
+                });
 #pragma warning restore 612, 618
         }
     }

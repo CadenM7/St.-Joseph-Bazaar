@@ -1,0 +1,64 @@
+@page
+@model StJosephBazaar.Pages.Startups.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Startup</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Startup.BoothName" class="control-label"></label>
+                <input asp-for="Startup.BoothName" class="form-control" />
+                <span asp-validation-for="Startup.BoothName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Twenties" class="control-label"></label>
+                <input asp-for="Startup.Twenties" class="form-control" />
+                <span asp-validation-for="Startup.Twenties" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Tens" class="control-label"></label>
+                <input asp-for="Startup.Tens" class="form-control" />
+                <span asp-validation-for="Startup.Tens" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Fives" class="control-label"></label>
+                <input asp-for="Startup.Fives" class="form-control" />
+                <span asp-validation-for="Startup.Fives" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Ones" class="control-label"></label>
+                <input asp-for="Startup.Ones" class="form-control" />
+                <span asp-validation-for="Startup.Ones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Quarters" class="control-label"></label>
+                <input asp-for="Startup.Quarters" class="form-control" />
+                <span asp-validation-for="Startup.Quarters" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startup.Total" class="control-label"></label>
+                <input asp-for="Startup.Total" class="form-control" />
+                <span asp-validation-for="Startup.Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

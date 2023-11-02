@@ -23,6 +23,25 @@ namespace StJosephBazaar.Migrations
                 {
                     table.PrimaryKey("PK_Booth", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Startup",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    BoothName = table.Column<string>(type: "TEXT", nullable: true),
+                    Twenties = table.Column<int>(type: "INTEGER", nullable: false),
+                    Tens = table.Column<int>(type: "INTEGER", nullable: false),
+                    Fives = table.Column<int>(type: "INTEGER", nullable: false),
+                    Ones = table.Column<int>(type: "INTEGER", nullable: false),
+                    Quarters = table.Column<int>(type: "INTEGER", nullable: false),
+                    Total = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Startup", x => x.ID);
+                });
         }
 
         /// <inheritdoc />
@@ -30,6 +49,9 @@ namespace StJosephBazaar.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Booth");
+
+            migrationBuilder.DropTable(
+                name: "Startup");
         }
     }
 }

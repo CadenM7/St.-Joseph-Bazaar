@@ -10,7 +10,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231102200403_InitialCreate")]
+    [Migration("20231102203556_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -34,6 +34,38 @@ namespace StJosephBazaar.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Booth");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Startup", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("BoothName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Fives")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Ones")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Quarters")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Tens")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Twenties")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Startup");
                 });
 #pragma warning restore 612, 618
         }

@@ -52,6 +52,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/Startups/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RhcnR1cHMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/Startups/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RhcnR1cHMvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/Startups/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RhcnR1cHMvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/Startups/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RhcnR1cHMvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/Startups/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU3RhcnR1cHMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/johnlyon/St.-Joseph-Bazaar/StJosephBazaar/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
