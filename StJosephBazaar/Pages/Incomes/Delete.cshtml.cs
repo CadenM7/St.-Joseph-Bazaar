@@ -29,15 +29,13 @@ namespace StJosephBazaar.Pages.Incomes
                 return NotFound();
             }
 
-            var income = await _context.Income.FirstOrDefaultAsync(m => m.ID == id);
-
-            if (income == null)
+            Income = await _context.Income
+                .AsNoTracking()
+                .Include(c => c.Booth)
+                .FirstOrDefaultAsync(m => m.ID == id);
+            if (Income == null)
             {
                 return NotFound();
-            }
-            else 
-            {
-                Income = income;
             }
             return Page();
         }

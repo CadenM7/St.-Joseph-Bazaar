@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
+using StJosephBazaar.Pages.Courses;
 
 namespace StJosephBazaar.Pages.Incomes
 {
-    public class CreateModel : PageModel
+    public class CreateModel : BoothNamePageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
@@ -21,26 +22,31 @@ namespace StJosephBazaar.Pages.Incomes
 
         public IActionResult OnGet()
         {
-        ViewData["BoothID"] = new SelectList(_context.Booth, "Id", "Id");
+            PopulateBoothsDropDownList(_context);
             return Page();
         }
 
         [BindProperty]
-        public Income Income { get; set; } = default!;
+        public Income Income { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Income == null || Income == null)
-            {
+            var emptyIncome = new Income();
+
+            if (await TryUpdateModelAsync<Income>(
+                emptyIncome,
+                "income",
+                s => s.BoothID, s => s.Date, s => s.HourCollected, s => s.Total))
+                {
+                    _context.Income.Add(emptyIncome);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("./Index");                    
+                }
+
+                PopulateBoothsDropDownList(_context, emptyIncome.BoothID);
                 return Page();
-            }
-
-            _context.Income.Add(Income);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
         }
     }
 }
