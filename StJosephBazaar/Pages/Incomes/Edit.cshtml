@@ -1,0 +1,50 @@
+@page
+@model StJosephBazaar.Pages.Incomes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Income</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Income.BoothID" class="control-label"></label>
+                <select asp-for="Income.BoothID" class="form-control" asp-items="ViewBag.BoothID"></select>
+                <span asp-validation-for="Income.BoothID" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Income.ID" />
+            <div class="form-group">
+                <label asp-for="Income.Date" class="control-label"></label>
+                <input asp-for="Income.Date" class="form-control" />
+                <span asp-validation-for="Income.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Income.HourCollected" class="control-label"></label>
+                <input asp-for="Income.HourCollected" class="form-control" />
+                <span asp-validation-for="Income.HourCollected" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Income.Total" class="control-label"></label>
+                <input asp-for="Income.Total" class="form-control" />
+                <span asp-validation-for="Income.Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
