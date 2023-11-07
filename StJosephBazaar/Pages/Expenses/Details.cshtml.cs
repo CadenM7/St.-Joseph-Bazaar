@@ -28,15 +28,16 @@ namespace StJosephBazaar.Pages.Expenses
                 return NotFound();
             }
 
-            var expense = await _context.Expense.FirstOrDefaultAsync(m => m.ID == id);
-            if (expense == null)
+            Expense = await _context.Expense
+                .AsNoTracking()
+                .Include(c => c.Booth)
+                .FirstOrDefaultAsync(m => Expense.ID == id);
+            
+            if (Expense == null)
             {
                 return NotFound();
             }
-            else 
-            {
-                Expense = expense;
-            }
+            
             return Page();
         }
     }

@@ -8,10 +8,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
+using StJosephBazaar.Pages.Courses;
 
 namespace StJosephBazaar.Pages.Expenses
 {
-    public class EditModel : PageModel
+    public class EditModel : BoothNamePageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
@@ -21,7 +22,7 @@ namespace StJosephBazaar.Pages.Expenses
         }
 
         [BindProperty]
-        public Expense Expense { get; set; } = default!;
+        public Expense Expense { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,44 +31,42 @@ namespace StJosephBazaar.Pages.Expenses
                 return NotFound();
             }
 
-            var expense =  await _context.Expense.FirstOrDefaultAsync(m => m.ID == id);
-            if (expense == null)
+            Expense = await _context.Expense
+                .Include(c => c.Booth).FirstOrDefaultAsync(m => m.ID == id);
+
+            if (Expense == null)
             {
                 return NotFound();
             }
-            Expense = expense;
-           ViewData["BoothID"] = new SelectList(_context.Booth, "Id", "Id");
+            PopulateBoothsDropDownList(_context, Expense.BoothID);
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
+            if(id == null){
+                return NotFound();
             }
 
-            _context.Attach(Expense).State = EntityState.Modified;
+            var expenseToUpdate = await _context.Expense.FindAsync(id);
 
-            try
+            if(expenseToUpdate == null){
+                return NotFound();
+            }
+
+            if (await TryUpdateModelAsync<Expense>(
+                expenseToUpdate,
+                "expense",
+                 s => s.BoothID, s => s.Date, s => s.Description, s => s.Total))
             {
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ExpenseExists(Expense.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                return RedirectToPage("./Index");
             }
 
-            return RedirectToPage("./Index");
+            PopulateBoothsDropDownList(_context, expenseToUpdate.BoothID);
+            return Page();
         }
 
         private bool ExpenseExists(int id)

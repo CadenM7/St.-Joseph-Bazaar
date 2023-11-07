@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
+using StJosephBazaar.Pages.Courses;
 
 namespace StJosephBazaar.Pages.Expenses
 {
-    public class CreateModel : PageModel
+    public class CreateModel : BoothNamePageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
@@ -21,26 +22,32 @@ namespace StJosephBazaar.Pages.Expenses
 
         public IActionResult OnGet()
         {
-        ViewData["BoothID"] = new SelectList(_context.Booth, "Id", "Id");
+            PopulateBoothsDropDownList(_context);
             return Page();
         }
 
         [BindProperty]
-        public Expense Expense { get; set; } = default!;
+        public Expense Expense { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Expense == null || Expense == null)
+          var emptyExpense = new Expense();
+
+          if(await TryUpdateModelAsync<Expense>(
+                emptyExpense,
+                "expense",
+                s => s.BoothID, s => s.Date, s => s.Description, s => s.Total))
+
             {
-                return Page();
+                _context.Expense.Add(emptyExpense);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
 
-            _context.Expense.Add(Expense);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            PopulateBoothsDropDownList(_context, emptyExpense.BoothID);
+            return Page();
         }
     }
 }

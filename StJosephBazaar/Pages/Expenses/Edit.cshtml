@@ -14,12 +14,6 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Expense.BoothID" class="control-label"></label>
-                <select asp-for="Expense.BoothID" class="form-control" asp-items="ViewBag.BoothID"></select>
-                <span asp-validation-for="Expense.BoothID" class="text-danger"></span>
-            </div>
-            <input type="hidden" asp-for="Expense.ID" />
-            <div class="form-group">
                 <label asp-for="Expense.Date" class="control-label"></label>
                 <input asp-for="Expense.Date" class="form-control" />
                 <span asp-validation-for="Expense.Date" class="text-danger"></span>
@@ -33,6 +27,12 @@
                 <label asp-for="Expense.Total" class="control-label"></label>
                 <input asp-for="Expense.Total" class="form-control" />
                 <span asp-validation-for="Expense.Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expense.Booth" class="control-label"></label>
+                <select asp-for="Expense.BoothID" class="form-control" 
+                        asp-items="@Model.BoothNameSL"></select>
+                <span asp-validation-for="Expense.BoothID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
