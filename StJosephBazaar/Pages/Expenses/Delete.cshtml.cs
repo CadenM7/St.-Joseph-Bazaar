@@ -32,7 +32,7 @@ namespace StJosephBazaar.Pages.Expenses
             Expense = await _context.Expense
                 .AsNoTracking()
                 .Include(c => c.Booth)
-                .FirstOrDefaultAsync(m => Expense.ID == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             
             if (Expense == null)
             {
