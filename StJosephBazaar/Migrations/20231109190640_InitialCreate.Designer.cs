@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231107191725_InitialCreate")]
+    [Migration("20231109190640_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
