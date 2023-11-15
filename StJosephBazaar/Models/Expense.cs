@@ -10,5 +10,7 @@ public class Expense
     public DateOnly Date { get; set; }
     public string? Description { get; set; }
     public decimal Total { get; set;}
+    public int InvoiceNum { get; set; }
+    public int CheckNum { get; set; }
     public Booth? Booth { get; set; }
 }

@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231115193614_InitialCreate")]
+    [Migration("20231115195345_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -46,11 +46,17 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("BoothID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("CheckNum")
+                        .HasColumnType("INTEGER");
+
                     b.Property<DateOnly>("Date")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("InvoiceNum")
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("TEXT");

@@ -38,7 +38,7 @@ namespace StJosephBazaar.Pages.Expenses
           if(await TryUpdateModelAsync<Expense>(
                 emptyExpense,
                 "expense",
-                s => s.BoothID, s => s.Date, s => s.Description, s => s.Total))
+                s => s.BoothID, s=> s.InvoiceNum, s => s.CheckNum, s => s.Date, s => s.Description, s => s.Total))
 
             {
                 _context.Expense.Add(emptyExpense);

@@ -17,6 +17,12 @@
                 @Html.DisplayNameFor(model => model.Expense[0].Booth)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Expense[0].InvoiceNum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expense[0].CheckNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Expense[0].Date)
             </th>
             <th>
@@ -33,6 +39,12 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Booth.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceNum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
