@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231109190640_InitialCreate")]
+    [Migration("20231115193614_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -76,6 +76,9 @@ namespace StJosephBazaar.Migrations
 
                     b.Property<TimeOnly>("HourCollected")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("RecieptNum")
+                        .HasColumnType("INTEGER");
 
                     b.Property<decimal>("Total")
                         .HasColumnType("TEXT");

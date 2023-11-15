@@ -9,5 +9,6 @@ public class Income
     public DateOnly Date { get; set; }
     public TimeOnly HourCollected { get; set; }
     public decimal Total { get; set; }
+    public int RecieptNum { get; set; }
     public Booth? Booth { get; set; }
 }

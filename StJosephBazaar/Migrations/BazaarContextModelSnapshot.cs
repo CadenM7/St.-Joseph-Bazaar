@@ -74,6 +74,9 @@ namespace StJosephBazaar.Migrations
                     b.Property<TimeOnly>("HourCollected")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("RecieptNum")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Total")
                         .HasColumnType("TEXT");
 

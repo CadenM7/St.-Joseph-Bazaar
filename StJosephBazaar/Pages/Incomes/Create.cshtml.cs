@@ -38,7 +38,7 @@ namespace StJosephBazaar.Pages.Incomes
             if (await TryUpdateModelAsync<Income>(
                 emptyIncome,
                 "income",
-                s => s.BoothID, s => s.Date, s => s.HourCollected, s => s.Total))
+                s => s.BoothID, s => s.Date, s => s.RecieptNum, s => s.HourCollected, s => s.Total))
                 {
                     _context.Income.Add(emptyIncome);
                     await _context.SaveChangesAsync();

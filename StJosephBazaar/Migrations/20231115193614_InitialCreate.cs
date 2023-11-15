@@ -74,7 +74,8 @@ namespace StJosephBazaar.Migrations
                     BoothID = table.Column<int>(type: "INTEGER", nullable: false),
                     Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     HourCollected = table.Column<TimeOnly>(type: "TEXT", nullable: false),
-                    Total = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Total = table.Column<decimal>(type: "TEXT", nullable: false),
+                    RecieptNum = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

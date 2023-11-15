@@ -17,6 +17,9 @@
                 @Html.DisplayNameFor(model => model.Income[0].Booth)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Income[0].RecieptNum)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Income[0].Date)
             </th>
             <th>
@@ -33,6 +36,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Booth.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecieptNum)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

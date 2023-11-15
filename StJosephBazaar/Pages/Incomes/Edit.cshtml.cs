@@ -61,7 +61,7 @@ namespace StJosephBazaar.Pages.Incomes
             if (await TryUpdateModelAsync<Income>(
                 incomeToUpdate,
                 "expense",
-                 s => s.BoothID, s => s.Date, s => s.HourCollected, s => s.Total))
+                 s => s.BoothID, s => s.RecieptNum, s => s.Date, s => s.HourCollected, s => s.Total))
             {
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
