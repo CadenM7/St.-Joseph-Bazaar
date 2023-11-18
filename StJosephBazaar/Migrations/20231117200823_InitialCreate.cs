@@ -18,7 +18,10 @@ namespace StJosephBazaar.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
-                    StartupTotal = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Friday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Auction = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Gross_Revenue = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

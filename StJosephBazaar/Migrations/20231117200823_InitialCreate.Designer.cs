@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231115195345_InitialCreate")]
+    [Migration("20231117200823_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -26,10 +26,19 @@ namespace StJosephBazaar.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<decimal>("Auction")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Friday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Gross_Revenue")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("StartupTotal")
+                    b.Property<decimal>("Saturday")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -139,7 +148,7 @@ namespace StJosephBazaar.Migrations
             modelBuilder.Entity("StJosephBazaar.Models.Income", b =>
                 {
                     b.HasOne("StJosephBazaar.Models.Booth", "Booth")
-                        .WithMany("Incomes")
+                        .WithMany("Net_Incomes")
                         .HasForeignKey("BoothID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -151,7 +160,7 @@ namespace StJosephBazaar.Migrations
                 {
                     b.Navigation("Expenses");
 
-                    b.Navigation("Incomes");
+                    b.Navigation("Net_Incomes");
                 });
 #pragma warning restore 612, 618
         }

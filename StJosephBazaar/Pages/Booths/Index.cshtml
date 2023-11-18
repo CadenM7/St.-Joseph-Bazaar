@@ -37,18 +37,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <th>
-                @Html.DisplayNameFor(modelItem => item.Friday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(modelItem => item.Saturday)
-            </th>
-            <th>
-                @Html.DisplayNameFor(modelItem => item.Auction)
-            </th>
-            <th>
-                @Html.DisplayNameFor(modelItem => item.Gross_Revenue)
-            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Friday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saturday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Auction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gross_Revenue)
+            </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

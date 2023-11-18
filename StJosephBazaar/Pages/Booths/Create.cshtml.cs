@@ -25,7 +25,7 @@ namespace StJosephBazaar.Pages.Booths
         }
 
         [BindProperty]
-        public Booth Booth { get; set; } = default!;
+        public Booth Booth { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
