@@ -15,37 +15,68 @@ namespace StJosephBazaar.Pages.Incomes
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
-        public IndexModel(StJosephBazaar.Data.BazaarContext context)
+        private readonly IConfiguration Configuration;
+
+        public IndexModel(StJosephBazaar.Data.BazaarContext context, IConfiguration configuration)
         {
             _context = context;
+            Configuration = configuration;
         }
 
-        public IList<Income> Income { get;set; } = default!;
-        
-        [BindProperty(SupportsGet = true)]
-        public string? SearchString { get; set; }
 
-        public SelectList? Names { get; set; }
+        public PaginatedList<Income> Income { get;set; }
+        //public string TotalSort { get; set; }
+        public string DateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string? BoothName { get; set; }
-
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder, string searchString,
+                string currentFilter, int? pageIndex)
         {
             if (_context.Income != null)
             {
-                Income = await _context.Income
-                .Include(i => i.Booth).ToListAsync();
-            
-                var incomes = from m in _context.Income
-                                        select m;
-                if (!string.IsNullOrEmpty(SearchString))
-                {
-                    incomes = incomes.Where(s => s.Booth.Name.Contains(SearchString));
-                }
+            CurrentSort = sortOrder;
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            //TotalSort = sortOrder == "Total" ? "total_desc": "Total";
 
-                    Income = await incomes.ToListAsync();
+            if(searchString!= null){
+                pageIndex = 1;
             }
-        }
+            else {
+                searchString = CurrentFilter;
+            }
+
+            CurrentFilter = searchString;
+
+            IQueryable<Income> incomeIQ = from s in _context.Income
+                                select s;
+            
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                incomeIQ = incomeIQ.Where(s => s.Booth.Name.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+            case "Date":
+                incomeIQ = incomeIQ.OrderBy(s => s.Date);
+                break;
+            case "date_desc":
+                incomeIQ = incomeIQ.OrderByDescending(s => s.Date);
+                break;
+            //case "Total":
+                //expenseIQ = expenseIQ.OrderBy(s => s.Total);
+                //break;
+            //case "total_desc":
+                //expenseIQ = expenseIQ.OrderByDescending(s => s.Total);
+                //break;
+            }
+
+            var pageSize = Configuration.GetValue("PageSize", 4);
+            Income = await PaginatedList<Income>.CreateAsync(
+                incomeIQ.AsNoTracking().Include(e => e.Booth), pageIndex ?? 1, pageSize);
+
+            }
     }
+}
 }

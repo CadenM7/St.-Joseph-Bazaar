@@ -11,11 +11,15 @@
     <a asp-page="Create">Create New</a>
 </p>
 
-<form>
-    <p>
-        Booth Name: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
-    </p>
+<form asp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by Booth:
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-primary" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
 </form>
 
 <table class="table">
@@ -28,7 +32,10 @@
                 @Html.DisplayNameFor(model => model.Income[0].RecieptNum)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Income[0].Date)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Income[0].Date)
+                </a>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Income[0].HourCollected)
@@ -66,3 +73,23 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Income.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Income.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Income.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Income.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
