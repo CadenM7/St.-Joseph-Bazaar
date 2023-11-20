@@ -64,8 +64,8 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("InvoiceNum")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ID");
 
@@ -92,8 +92,8 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("RecieptNum")
                         .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Total")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Total")
+                        .HasColumnType("REAL");
 
                     b.HasKey("ID");
 
