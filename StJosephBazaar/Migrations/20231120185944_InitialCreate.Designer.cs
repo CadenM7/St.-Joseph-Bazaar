@@ -11,11 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-<<<<<<<< HEAD:StJosephBazaar/Migrations/20231120185144_InitialCreate.Designer.cs
-    [Migration("20231120185144_InitialCreate")]
-========
-    [Migration("20231120184243_InitialCreate")]
->>>>>>>> 55760d795e17e32d95c6ff53a6195e5aa3aa7a46:StJosephBazaar/Migrations/20231120184243_InitialCreate.Designer.cs
+    [Migration("20231120185944_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -45,7 +41,15 @@ namespace StJosephBazaar.Migrations
                     b.Property<decimal>("Saturday")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Year")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("YearID")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("YearID");
 
                     b.ToTable("Booth");
                 });
@@ -138,6 +142,27 @@ namespace StJosephBazaar.Migrations
                     b.ToTable("Startup");
                 });
 
+            modelBuilder.Entity("StJosephBazaar.Models.Year", b =>
+                {
+                    b.Property<int>("YearID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("YearVal")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("YearID");
+
+                    b.ToTable("Year");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Booth", b =>
+                {
+                    b.HasOne("StJosephBazaar.Models.Year", null)
+                        .WithMany("Booths")
+                        .HasForeignKey("YearID");
+                });
+
             modelBuilder.Entity("StJosephBazaar.Models.Expense", b =>
                 {
                     b.HasOne("StJosephBazaar.Models.Booth", "Booth")
@@ -165,6 +190,11 @@ namespace StJosephBazaar.Migrations
                     b.Navigation("Expenses");
 
                     b.Navigation("Income");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Year", b =>
+                {
+                    b.Navigation("Booths");
                 });
 #pragma warning restore 612, 618
         }

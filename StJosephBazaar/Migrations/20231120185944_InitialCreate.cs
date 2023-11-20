@@ -12,23 +12,6 @@ namespace StJosephBazaar.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Booth",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(type: "TEXT", nullable: true),
-                    Friday = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Auction = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Booth", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Startup",
                 columns: table => new
                 {
@@ -44,6 +27,43 @@ namespace StJosephBazaar.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Startup", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Year",
+                columns: table => new
+                {
+                    YearID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    YearVal = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Year", x => x.YearID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Booth",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true),
+                    Friday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Year = table.Column<int>(type: "INTEGER", nullable: false),
+                    Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Auction = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YearID = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Booth", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Booth_Year_YearID",
+                        column: x => x.YearID,
+                        principalTable: "Year",
+                        principalColumn: "YearID");
                 });
 
             migrationBuilder.CreateTable(
@@ -94,6 +114,11 @@ namespace StJosephBazaar.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Booth_YearID",
+                table: "Booth",
+                column: "YearID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Expense_BoothID",
                 table: "Expense",
                 column: "BoothID");
@@ -118,6 +143,9 @@ namespace StJosephBazaar.Migrations
 
             migrationBuilder.DropTable(
                 name: "Booth");
+
+            migrationBuilder.DropTable(
+                name: "Year");
         }
     }
 }
