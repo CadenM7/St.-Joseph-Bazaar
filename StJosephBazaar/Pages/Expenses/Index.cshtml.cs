@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ContosoUniversity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -15,25 +16,36 @@ namespace StJosephBazaar.Pages.Expenses
     public class IndexModel : PageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
+        private readonly IConfiguration Configuration;
 
-        public IndexModel(StJosephBazaar.Data.BazaarContext context)
+        public IndexModel(StJosephBazaar.Data.BazaarContext context, IConfiguration configuration)
         {
             _context = context;
+            Configuration = configuration;
         }
 
-        public IList<Expense> Expense { get;set; } = default!;
+
+        public PaginatedList<Expense> Expense { get;set; }
         //public string TotalSort { get; set; }
         public string DateSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
 
-        public async Task OnGetAsync(string sortOrder, string searchString)
+        public async Task OnGetAsync(string sortOrder, string searchString,
+                string currentFilter, int? pageIndex)
         {
             if (_context.Expense != null)
             {
-            
+            CurrentSort = sortOrder;
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             //TotalSort = sortOrder == "Total" ? "total_desc": "Total";
+
+            if(searchString!= null){
+                pageIndex = 1;
+            }
+            else {
+                searchString = CurrentFilter;
+            }
 
             CurrentFilter = searchString;
 
@@ -61,7 +73,10 @@ namespace StJosephBazaar.Pages.Expenses
                 //break;
             }
 
-            Expense = await expenseIQ.AsNoTracking().Include(e => e.Booth).ToListAsync();
+            var pageSize = Configuration.GetValue("PageSize", 4);
+            Expense = await PaginatedList<Expense>.CreateAsync(
+                expenseIQ.AsNoTracking().Include(e => e.Booth), pageIndex ?? 1, pageSize);
+
             }
         }
     }

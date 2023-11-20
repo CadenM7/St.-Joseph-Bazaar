@@ -35,7 +35,8 @@
                 @Html.DisplayNameFor(model => model.Expense[0].CheckNum)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Expense[0].Date)
                 </a>
             </th>
@@ -43,9 +44,7 @@
                 @Html.DisplayNameFor(model => model.Expense[0].Description)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.TotalSort">
-                    @Html.DisplayNameFor(model => model.Expense[0].Total)
-                </a>
+                @Html.DisplayNameFor(model => model.Expense[0].Total)
             </th>
             <th></th>
         </tr>
@@ -80,3 +79,23 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Expense.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Expense.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Expense.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Expense.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-primary @nextDisabled">
+    Next
+</a>
