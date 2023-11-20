@@ -41,7 +41,10 @@
                 @Html.DisplayNameFor(model => model.Income[0].HourCollected)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Income[0].Total)
+                <a asp-page="./Index" asp-route-sortOrder="@Model.TotalSort"
+                   asp-route-currentFilter="@Model.CurrentFilter">
+                    @Html.DisplayNameFor(model => model.Income[0].Total)
+                </a>
             </th>
             <th></th>
         </tr>

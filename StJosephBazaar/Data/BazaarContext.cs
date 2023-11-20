@@ -21,5 +21,6 @@ namespace StJosephBazaar.Data
         public DbSet<StJosephBazaar.Models.Expense> Expense { get; set; } = default!;
 
         public DbSet<StJosephBazaar.Models.Income> Income { get; set; } = default!;
+        public DbSet<StJosephBazaar.Models.Year> Year { get; set; } = default!;
     }
 }

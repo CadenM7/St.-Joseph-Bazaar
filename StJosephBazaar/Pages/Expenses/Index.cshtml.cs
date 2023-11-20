@@ -25,7 +25,7 @@ namespace StJosephBazaar.Pages.Expenses
 
 
         public PaginatedList<Expense> Expense { get;set; }
-        //public string TotalSort { get; set; }
+        public string TotalSort { get; set; }
         public string DateSort { get; set; }
         public string CurrentFilter { get; set; }
         public string CurrentSort { get; set; }
@@ -37,7 +37,7 @@ namespace StJosephBazaar.Pages.Expenses
             {
             CurrentSort = sortOrder;
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
-            //TotalSort = sortOrder == "Total" ? "total_desc": "Total";
+            TotalSort = sortOrder == "Total" ? "total_desc": "Total";
 
             if(searchString!= null){
                 pageIndex = 1;
@@ -64,12 +64,12 @@ namespace StJosephBazaar.Pages.Expenses
             case "date_desc":
                 expenseIQ = expenseIQ.OrderByDescending(s => s.Date);
                 break;
-            //case "Total":
-                //expenseIQ = expenseIQ.OrderBy(s => s.Total);
-                //break;
-            //case "total_desc":
-                //expenseIQ = expenseIQ.OrderByDescending(s => s.Total);
-                //break;
+            case "Total":
+                expenseIQ = expenseIQ.OrderBy(s => s.Total);
+                break;
+            case "total_desc":
+                expenseIQ = expenseIQ.OrderByDescending(s => s.Total);
+                break;
             }
 
             var pageSize = Configuration.GetValue("PageSize", 4);

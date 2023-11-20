@@ -8,6 +8,8 @@ public class Booth
     public string? Name { get; set; }
     // public decimal StartupTotal { get; set; }
     public decimal Friday { get; set; }
+    
+    public int YearID{get;set;}
     public decimal Saturday { get; set; }
     public decimal Auction { get; set; }
     public decimal Gross_Revenue {
