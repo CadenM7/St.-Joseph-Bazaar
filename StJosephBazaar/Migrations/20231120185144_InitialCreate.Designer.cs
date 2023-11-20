@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231117200823_InitialCreate")]
+    [Migration("20231120185144_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -32,10 +32,10 @@ namespace StJosephBazaar.Migrations
                     b.Property<decimal>("Friday")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Gross_Revenue")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Name")
+                    b.Property<decimal>("Purchases")
                         .HasColumnType("TEXT");
 
                     b.Property<decimal>("Saturday")
@@ -148,7 +148,7 @@ namespace StJosephBazaar.Migrations
             modelBuilder.Entity("StJosephBazaar.Models.Income", b =>
                 {
                     b.HasOne("StJosephBazaar.Models.Booth", "Booth")
-                        .WithMany("Net_Incomes")
+                        .WithMany("Income")
                         .HasForeignKey("BoothID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -160,7 +160,7 @@ namespace StJosephBazaar.Migrations
                 {
                     b.Navigation("Expenses");
 
-                    b.Navigation("Net_Incomes");
+                    b.Navigation("Income");
                 });
 #pragma warning restore 612, 618
         }

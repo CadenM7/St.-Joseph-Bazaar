@@ -21,7 +21,7 @@ namespace StJosephBazaar.Migrations
                     Friday = table.Column<decimal>(type: "TEXT", nullable: false),
                     Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
                     Auction = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Gross_Revenue = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -28,6 +28,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Booth[0].Gross_Revenue)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booth[0].Purchases)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Booth[0].Net_Income)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,6 +54,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Gross_Revenue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Purchases)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Net_Income)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
