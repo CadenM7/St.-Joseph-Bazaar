@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 
@@ -21,31 +22,46 @@ namespace StJosephBazaar.Pages.Expenses
         }
 
         public IList<Expense> Expense { get;set; } = default!;
+        //public string TotalSort { get; set; }
+        public string DateSort { get; set; }
+        public string CurrentFilter { get; set; }
+        public string CurrentSort { get; set; }
 
-        [BindProperty(SupportsGet = true)]
-        public string? SearchString { get; set; }
-
-        public SelectList? Names { get; set; }
-
-        [BindProperty(SupportsGet = true)]
-        public string? BoothName { get; set; }
-
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder, string searchString)
         {
             if (_context.Expense != null)
             {
-                Expense = await _context.Expense
-                .Include(e => e.Booth).ToListAsync();
             
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+            //TotalSort = sortOrder == "Total" ? "total_desc": "Total";
+
+            CurrentFilter = searchString;
+
+            IQueryable<Expense> expenseIQ = from s in _context.Expense
+                                select s;
             
-            var expenses = from m in _context.Expense
-                                        select m;
-            if (!string.IsNullOrEmpty(SearchString))
+            if (!String.IsNullOrEmpty(searchString))
             {
-                expenses = expenses.Where(s => s.Booth.Name.Contains(SearchString));
+                expenseIQ = expenseIQ.Where(s => s.Booth.Name.Contains(searchString));
             }
 
-                Expense = await expenses.ToListAsync();
+            switch (sortOrder)
+            {
+            case "Date":
+                expenseIQ = expenseIQ.OrderBy(s => s.Date);
+                break;
+            case "date_desc":
+                expenseIQ = expenseIQ.OrderByDescending(s => s.Date);
+                break;
+            //case "Total":
+                //expenseIQ = expenseIQ.OrderBy(s => s.Total);
+                //break;
+            //case "total_desc":
+                //expenseIQ = expenseIQ.OrderByDescending(s => s.Total);
+                //break;
+            }
+
+            Expense = await expenseIQ.AsNoTracking().Include(e => e.Booth).ToListAsync();
             }
         }
     }
