@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.defaultText{
+  font-family: 'Ephesis', cursive;
+  font-size: 18;
+}
