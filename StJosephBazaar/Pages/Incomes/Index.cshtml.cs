@@ -43,7 +43,7 @@ namespace StJosephBazaar.Pages.Incomes
                 pageIndex = 1;
             }
             else {
-                searchString = CurrentFilter;
+                searchString = currentFilter;
             }
 
             CurrentFilter = searchString;

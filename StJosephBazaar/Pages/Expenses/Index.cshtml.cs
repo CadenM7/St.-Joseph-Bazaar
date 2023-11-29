@@ -33,8 +33,6 @@ namespace StJosephBazaar.Pages.Expenses
         public async Task OnGetAsync(string sortOrder, string searchString,
                 string currentFilter, int? pageIndex)
         {
-            if (_context.Expense != null)
-            {
             CurrentSort = sortOrder;
             DateSort = sortOrder == "Date" ? "date_desc" : "Date";
             TotalSort = sortOrder == "Total" ? "total_desc": "Total";
@@ -43,13 +41,13 @@ namespace StJosephBazaar.Pages.Expenses
                 pageIndex = 1;
             }
             else {
-                searchString = CurrentFilter;
+                searchString = currentFilter;
             }
 
             CurrentFilter = searchString;
 
             IQueryable<Expense> expenseIQ = from s in _context.Expense
-                                select s;
+                                            select s;
             
             if (!String.IsNullOrEmpty(searchString))
             {
@@ -75,8 +73,6 @@ namespace StJosephBazaar.Pages.Expenses
             var pageSize = Configuration.GetValue("PageSize", 4);
             Expense = await PaginatedList<Expense>.CreateAsync(
                 expenseIQ.AsNoTracking().Include(e => e.Booth), pageIndex ?? 1, pageSize);
-
-            }
         }
     }
 }
