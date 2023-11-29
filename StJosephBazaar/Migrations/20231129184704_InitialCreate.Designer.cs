@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231120185944_InitialCreate")]
+    [Migration("20231129184704_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -52,6 +52,47 @@ namespace StJosephBazaar.Migrations
                     b.HasIndex("YearID");
 
                     b.ToTable("Booth");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Deposit", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Checks")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Dimes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Fives")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Nickels")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Ones")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Pennies")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Quarters")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Tens")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Twentys")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Deposit");
                 });
 
             modelBuilder.Entity("StJosephBazaar.Models.Expense", b =>

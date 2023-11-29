@@ -12,6 +12,28 @@ namespace StJosephBazaar.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Deposit",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Checks = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Twentys = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Tens = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Fives = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Ones = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Quarters = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Dimes = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Nickels = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Pennies = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deposit", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Startup",
                 columns: table => new
                 {
@@ -132,6 +154,9 @@ namespace StJosephBazaar.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Deposit");
+
             migrationBuilder.DropTable(
                 name: "Expense");
 

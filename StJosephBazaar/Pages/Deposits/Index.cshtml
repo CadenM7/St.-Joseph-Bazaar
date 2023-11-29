@@ -1,0 +1,96 @@
+@page
+@model StJosephBazaar.Pages.Deposits.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Checks)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Twentys)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Tens)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Fives)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Ones)
+            </th>
+            @* <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Quarters)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Dimes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Nickels)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Pennies)
+            </th> *@
+            <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Total_Change)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Deposit) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Checks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Twentys)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tens)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fives)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ones)
+            </td>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.Quarters)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dimes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nickels)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pennies)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_Change)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

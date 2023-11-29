@@ -3983,6 +3983,7 @@ textarea.form-control-lg {
   justify-content: space-between;
 }
 .navbar-brand {
+  font-family: 'Ephesis', cursive;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
   margin-right: 1rem;

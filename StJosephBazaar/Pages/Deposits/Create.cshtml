@@ -1,0 +1,79 @@
+@page
+@model StJosephBazaar.Pages.Deposits.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Deposit</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Deposit.Date" class="control-label"></label>
+                <input asp-for="Deposit.Date" class="form-control" />
+                <span asp-validation-for="Deposit.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Checks" class="control-label"></label>
+                <input asp-for="Deposit.Checks" class="form-control" />
+                <span asp-validation-for="Deposit.Checks" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Twentys" class="control-label"></label>
+                <input asp-for="Deposit.Twentys" class="form-control" />
+                <span asp-validation-for="Deposit.Twentys" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Tens" class="control-label"></label>
+                <input asp-for="Deposit.Tens" class="form-control" />
+                <span asp-validation-for="Deposit.Tens" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Fives" class="control-label"></label>
+                <input asp-for="Deposit.Fives" class="form-control" />
+                <span asp-validation-for="Deposit.Fives" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Ones" class="control-label"></label>
+                <input asp-for="Deposit.Ones" class="form-control" />
+                <span asp-validation-for="Deposit.Ones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Quarters" class="control-label"></label>
+                <input asp-for="Deposit.Quarters" class="form-control" />
+                <span asp-validation-for="Deposit.Quarters" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Dimes" class="control-label"></label>
+                <input asp-for="Deposit.Dimes" class="form-control" />
+                <span asp-validation-for="Deposit.Dimes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Nickels" class="control-label"></label>
+                <input asp-for="Deposit.Nickels" class="form-control" />
+                <span asp-validation-for="Deposit.Nickels" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deposit.Pennies" class="control-label"></label>
+                <input asp-for="Deposit.Pennies" class="form-control" />
+                <span asp-validation-for="Deposit.Pennies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

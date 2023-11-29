@@ -14,11 +14,11 @@ namespace StJosephBazaar.Pages.Courses
         public void PopulateYearDropDownList(BazaarContext _context,
             object selectedYear = null)
         {
-            var boothQuery = from d in _context.Year
-                                   orderby d.YearVal // Sort by name.
+            var yearQuery = from d in _context.Year
+                                   orderby d.YearID // Sort by name.
                                    select d;
 
-            YearNameSL = new SelectList(boothQuery.AsNoTracking(),
+            YearNameSL = new SelectList(yearQuery.AsNoTracking(),
                 nameof(Year.YearID),
                 nameof(Year.YearVal),
                 selectedYear);
