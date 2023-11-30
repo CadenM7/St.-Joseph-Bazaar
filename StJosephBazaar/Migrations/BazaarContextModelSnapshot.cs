@@ -63,29 +63,29 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Dimes")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Dimes")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Fives")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Fives")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Nickels")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Nickels")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Ones")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Ones")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Pennies")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Pennies")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Quarters")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Quarters")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Tens")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Tens")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Twentys")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Twentys")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 

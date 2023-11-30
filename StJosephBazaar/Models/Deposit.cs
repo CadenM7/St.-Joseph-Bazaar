@@ -7,10 +7,10 @@ namespace StJosephBazaar.Models
 
         //Cash
         public decimal Checks { get; set; }
-        public decimal Twentys { get; set; }
-        public decimal Tens { get; set; }
-        public decimal Fives { get; set; }
-        public decimal Ones { get; set; }
+        public int Twentys { get; set; }
+        public int Tens { get; set; }
+        public int Fives { get; set; }
+        public int Ones { get; set; }
 
         // Change
         public double Quarters  { get; set; }

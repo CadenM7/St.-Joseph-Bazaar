@@ -19,14 +19,14 @@ namespace StJosephBazaar.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     Checks = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Twentys = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Tens = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Fives = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Ones = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Quarters = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Dimes = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Nickels = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Pennies = table.Column<decimal>(type: "TEXT", nullable: false)
+                    Twentys = table.Column<int>(type: "INTEGER", nullable: false),
+                    Tens = table.Column<int>(type: "INTEGER", nullable: false),
+                    Fives = table.Column<int>(type: "INTEGER", nullable: false),
+                    Ones = table.Column<int>(type: "INTEGER", nullable: false),
+                    Quarters = table.Column<double>(type: "REAL", nullable: false),
+                    Dimes = table.Column<double>(type: "REAL", nullable: false),
+                    Nickels = table.Column<double>(type: "REAL", nullable: false),
+                    Pennies = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {
