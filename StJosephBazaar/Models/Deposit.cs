@@ -21,7 +21,7 @@ namespace StJosephBazaar.Models
         public decimal Total_Change {
             get 
             {
-            return (decimal)((Quarters * 0.25) + (Dimes* 0.10) + (Nickels * 0.05) + (Pennies * 0.01));
+            return (decimal)((Quarters * 0.25) + (Dimes * 0.10) + (Nickels * 0.05) + (Pennies * 0.01));
             }
         }
     }
