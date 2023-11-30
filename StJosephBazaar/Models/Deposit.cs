@@ -13,15 +13,15 @@ namespace StJosephBazaar.Models
         public decimal Ones { get; set; }
 
         // Change
-        public decimal Quarters  { get; set; }
-        public decimal Dimes { get; set; }
-        public decimal Nickels { get; set; }
-        public decimal Pennies { get; set; }
+        public double Quarters  { get; set; }
+        public double Dimes { get; set; }
+        public double Nickels { get; set; }
+        public double Pennies { get; set; }
 
         public decimal Total_Change {
             get 
             {
-            return (decimal)(Quarters + Dimes + Nickels + Pennies);
+            return (decimal)((Quarters * 0.25) + (Dimes* 0.10) + (Nickels * 0.05) + (Pennies * 0.01));
             }
         }
     }
