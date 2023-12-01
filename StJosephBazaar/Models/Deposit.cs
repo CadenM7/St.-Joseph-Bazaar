@@ -17,11 +17,12 @@ namespace StJosephBazaar.Models
         public double Dimes { get; set; }
         public double Nickels { get; set; }
         public double Pennies { get; set; }
+        public double Other_Change { get; set; }
 
         public decimal Total_Change {
             get 
             {
-            return (decimal)((Quarters * 0.25) + (Dimes * 0.10) + (Nickels * 0.05) + (Pennies * 0.01));
+            return (decimal)((Quarters * 0.25) + (Dimes * 0.10) + (Nickels * 0.05) + (Pennies * 0.01) + Other_Change);
             }
         }
     }
