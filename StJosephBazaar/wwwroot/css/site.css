@@ -5,6 +5,7 @@ html {
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+    
   }
 }
 
@@ -22,6 +23,38 @@ body {
 }
 
 .defaultText{
-  font-family: 'Ephesis', cursive;
+  font-family: Tiro Devanagari Marathi;
   font-size: 18;
+}
+
+header{
+  font-family: Tiro Devanagari Marathi;
+}
+
+h1, h3, h4{
+  font-family: Tiro Devanagari Marathi;
+}
+
+p{
+  font-family: Tiro Devanagari Marathi;
+}
+
+table{
+  font-family: Tiro Devanagari Marathi;
+}
+
+.row{
+  font-family: Tiro Devanagari Marathi;
+}
+
+input{
+  margin-top: 5px;
+}
+
+.btn-primary{
+  font-family: Tiro Devanagari Marathi;
+}
+
+#return{
+  font-family: Tiro Devanagari Marathi;
 }
