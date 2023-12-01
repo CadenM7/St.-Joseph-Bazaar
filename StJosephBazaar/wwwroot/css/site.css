@@ -31,7 +31,7 @@ header{
   font-family: Tiro Devanagari Marathi;
 }
 
-h1, h4{
+h1, h3, h4{
   font-family: Tiro Devanagari Marathi;
 }
 
@@ -49,4 +49,12 @@ table{
 
 input{
   margin-top: 5px;
+}
+
+.btn-primary{
+  font-family: Tiro Devanagari Marathi;
+}
+
+#return{
+  font-family: Tiro Devanagari Marathi;
 }

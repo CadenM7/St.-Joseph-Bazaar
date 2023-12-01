@@ -17,7 +17,7 @@
             Find by Booth:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
             <input type="submit" value="Search" class="btn btn-primary" /> |
-            <a asp-page="./Index">Back to full List</a>
+            <a ID="return" asp-page="./Index">Back to full List</a>
         </p>
     </div>
 </form>
@@ -68,9 +68,9 @@
                 @Html.DisplayFor(modelItem => item.Total)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a ID="return" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a ID="return" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a ID="return" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
