@@ -49,3 +49,8 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+#logo{
+  height: 50%;
+  width: 50%;
+}
