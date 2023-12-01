@@ -51,6 +51,10 @@ button.accept-policy {
 }
 
 #logo{
-  height: 50%;
+  height: 60%;
   width: 50%;
+}
+
+#blank{
+  height: 40px;
 }
