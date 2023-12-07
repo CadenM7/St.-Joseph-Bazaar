@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231120185944_InitialCreate")]
+    [Migration("20231207153806_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -41,10 +41,7 @@ namespace StJosephBazaar.Migrations
                     b.Property<decimal>("Saturday")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("Year")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("YearID")
+                    b.Property<int>("YearID")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
@@ -52,6 +49,47 @@ namespace StJosephBazaar.Migrations
                     b.HasIndex("YearID");
 
                     b.ToTable("Booth");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Deposit", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("Checks")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("Date")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Dimes")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Fives")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Nickels")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Ones")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Pennies")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Quarters")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Tens")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Twentys")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Deposit");
                 });
 
             modelBuilder.Entity("StJosephBazaar.Models.Expense", b =>
@@ -148,6 +186,12 @@ namespace StJosephBazaar.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateOnly>("Friday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateOnly>("Saturday")
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("YearVal")
                         .HasColumnType("INTEGER");
 
@@ -158,9 +202,13 @@ namespace StJosephBazaar.Migrations
 
             modelBuilder.Entity("StJosephBazaar.Models.Booth", b =>
                 {
-                    b.HasOne("StJosephBazaar.Models.Year", null)
+                    b.HasOne("StJosephBazaar.Models.Year", "Year")
                         .WithMany("Booths")
-                        .HasForeignKey("YearID");
+                        .HasForeignKey("YearID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Year");
                 });
 
             modelBuilder.Entity("StJosephBazaar.Models.Expense", b =>

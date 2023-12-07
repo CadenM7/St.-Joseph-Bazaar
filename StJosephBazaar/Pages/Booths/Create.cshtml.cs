@@ -38,7 +38,7 @@ namespace StJosephBazaar.Pages.Booths
                 if(await TryUpdateModelAsync<Booth>(
                         emptyBooth,
                         "booth",
-                        s => s.Id, s=> s.Name, s => s.Friday, s => s.Year, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
+                        s => s.Id, s => s.YearID, s => s.Year, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
 
                     {
                         _context.Booth.Add(emptyBooth);
@@ -46,7 +46,7 @@ namespace StJosephBazaar.Pages.Booths
                         return RedirectToPage("./Index");
                     }
 
-                    PopulateYearDropDownList(_context, emptyBooth.Year);
+                    PopulateYearDropDownList(_context, emptyBooth.YearID);
                     return Page();
                 }
     }

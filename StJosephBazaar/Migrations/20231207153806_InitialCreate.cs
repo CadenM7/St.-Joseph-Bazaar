@@ -12,6 +12,28 @@ namespace StJosephBazaar.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Deposit",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Checks = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Twentys = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Tens = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Fives = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Ones = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Quarters = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Dimes = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Nickels = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Pennies = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deposit", x => x.ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Startup",
                 columns: table => new
                 {
@@ -35,7 +57,9 @@ namespace StJosephBazaar.Migrations
                 {
                     YearID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    YearVal = table.Column<int>(type: "INTEGER", nullable: false)
+                    YearVal = table.Column<int>(type: "INTEGER", nullable: false),
+                    Friday = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Saturday = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,11 +74,10 @@ namespace StJosephBazaar.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Friday = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Year = table.Column<int>(type: "INTEGER", nullable: false),
+                    YearID = table.Column<int>(type: "INTEGER", nullable: false),
                     Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
                     Auction = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false),
-                    YearID = table.Column<int>(type: "INTEGER", nullable: true)
+                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,7 +86,8 @@ namespace StJosephBazaar.Migrations
                         name: "FK_Booth_Year_YearID",
                         column: x => x.YearID,
                         principalTable: "Year",
-                        principalColumn: "YearID");
+                        principalColumn: "YearID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -132,6 +156,9 @@ namespace StJosephBazaar.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Deposit");
+
             migrationBuilder.DropTable(
                 name: "Expense");
 
