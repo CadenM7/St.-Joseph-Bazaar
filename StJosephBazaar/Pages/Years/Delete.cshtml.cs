@@ -29,7 +29,7 @@ namespace StJosephBazaar.Pages.Years
                 return NotFound();
             }
 
-            var year = await _context.Year.FirstOrDefaultAsync(m => m.YearID == id);
+            var year = await _context.Year.FirstOrDefaultAsync(m => m.ID == id);
 
             if (year == null)
             {

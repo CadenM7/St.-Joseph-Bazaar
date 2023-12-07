@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231207153806_InitialCreate")]
+    [Migration("20231207164731_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -182,7 +182,7 @@ namespace StJosephBazaar.Migrations
 
             modelBuilder.Entity("StJosephBazaar.Models.Year", b =>
                 {
-                    b.Property<int>("YearID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -192,10 +192,11 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Saturday")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("YearVal")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("YearVal")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
-                    b.HasKey("YearID");
+                    b.HasKey("ID");
 
                     b.ToTable("Year");
                 });

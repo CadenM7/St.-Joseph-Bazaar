@@ -25,7 +25,7 @@ namespace StJosephBazaar.Pages.Booths
         {
             if (_context.Booth != null)
             {
-                Booth = await _context.Booth.ToListAsync();
+                Booth = await _context.Booth.Include(e => e.Year).ToListAsync();
             }
         }
     }

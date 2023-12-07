@@ -30,7 +30,9 @@ namespace StJosephBazaar.Pages.Booths
                 return NotFound();
             }
 
-            Booth =  await _context.Booth.Include(c => c.Year).FirstOrDefaultAsync(m => m.Id == id);
+            Booth =  await _context.Booth
+                .Include(c => c.Year).FirstOrDefaultAsync(m => m.Id == id);
+            
             if (Booth == null)
             {
                 return NotFound();
@@ -59,7 +61,7 @@ namespace StJosephBazaar.Pages.Booths
             if(await TryUpdateModelAsync<Booth>(
                 boothToUpdate,
                 "booth",
-                s => s.Id, s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
+                s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
             {
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");

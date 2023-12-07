@@ -4,7 +4,7 @@ namespace StJosephBazaar.Models;
 
 public class Year
 {
-    public int YearID{get;set;}
+    public int ID{get;set;}
 
     public int YearVal{get;set;}
 
