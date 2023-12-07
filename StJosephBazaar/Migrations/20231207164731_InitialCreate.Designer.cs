@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StJosephBazaar.Data;
 
@@ -10,9 +11,11 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    partial class BazaarContextModelSnapshot : ModelSnapshot
+    [Migration("20231207164731_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.13");
@@ -60,37 +63,6 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
-                    b.Property<double>("Dimes")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("Fives")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<double>("Nickels")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("Ones")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<double>("Other_Change")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("Pennies")
-                        .HasColumnType("REAL");
-
-                    b.Property<double>("Quarters")
-                        .HasColumnType("REAL");
-
-                    b.Property<int>("Tens")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Twentys")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("Year")
-                        .HasColumnType("INTEGER");
-=======
                     b.Property<decimal>("Dimes")
                         .HasColumnType("TEXT");
 
@@ -114,7 +86,6 @@ namespace StJosephBazaar.Migrations
 
                     b.Property<decimal>("Twentys")
                         .HasColumnType("TEXT");
->>>>>>> YeaarProgress
 
                     b.HasKey("ID");
 

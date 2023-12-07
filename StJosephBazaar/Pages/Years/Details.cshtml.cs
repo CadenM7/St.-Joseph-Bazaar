@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 
-namespace StJosephBazaar.Pages.Booths
+namespace StJosephBazaar.Pages.Years
 {
     public class DetailsModel : PageModel
     {
@@ -19,23 +19,23 @@ namespace StJosephBazaar.Pages.Booths
             _context = context;
         }
 
-      public Booth Booth { get; set; } = default!; 
+      public Year Year { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Booth == null)
+            if (id == null || _context.Year == null)
             {
                 return NotFound();
             }
 
-            Booth = await _context.Booth
-            .AsNoTracking()
-            .Include(c => c.Year)
-            .FirstOrDefaultAsync(m => m.Id == id);
-            
-            if (Booth == null)
+            var year = await _context.Year.FirstOrDefaultAsync(m => m.ID == id);
+            if (year == null)
             {
                 return NotFound();
+            }
+            else 
+            {
+                Year = year;
             }
             return Page();
         }

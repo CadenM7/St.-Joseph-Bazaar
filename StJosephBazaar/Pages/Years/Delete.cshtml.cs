@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 
-namespace StJosephBazaar.Pages.Booths
+namespace StJosephBazaar.Pages.Years
 {
     public class DeleteModel : PageModel
     {
@@ -20,39 +20,40 @@ namespace StJosephBazaar.Pages.Booths
         }
 
         [BindProperty]
-      public Booth Booth { get; set; } = default!;
+      public Year Year { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Booth == null)
+            if (id == null || _context.Year == null)
             {
                 return NotFound();
             }
 
-            Booth = await _context.Booth.
-            AsNoTracking()
-            .Include(c => c.Year)
-            .FirstOrDefaultAsync(m => m.Id == id);
+            var year = await _context.Year.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Booth == null)
+            if (year == null)
             {
                 return NotFound();
+            }
+            else 
+            {
+                Year = year;
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Booth == null)
+            if (id == null || _context.Year == null)
             {
                 return NotFound();
             }
-            var booth = await _context.Booth.FindAsync(id);
+            var year = await _context.Year.FindAsync(id);
 
-            if (booth != null)
+            if (year != null)
             {
-                Booth = booth;
-                _context.Booth.Remove(Booth);
+                Year = year;
+                _context.Year.Remove(Year);
                 await _context.SaveChangesAsync();
             }
 

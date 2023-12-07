@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 
-namespace StJosephBazaar.Pages.Booths
+namespace StJosephBazaar.Pages.Years
 {
     public class IndexModel : PageModel
     {
@@ -19,13 +19,13 @@ namespace StJosephBazaar.Pages.Booths
             _context = context;
         }
 
-        public IList<Booth> Booth { get;set; } = default!;
+        public IList<Year> Year { get;set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Booth != null)
+            if (_context.Year != null)
             {
-                Booth = await _context.Booth.Include(e => e.Year).ToListAsync();
+                Year = await _context.Year.ToListAsync();
             }
         }
     }

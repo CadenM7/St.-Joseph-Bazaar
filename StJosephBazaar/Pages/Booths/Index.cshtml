@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Booth[0].Year)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Booth[0].Name)
             </th>
             <th>
@@ -39,7 +42,11 @@
     </thead>
     <tbody>
 @foreach (var item in Model.Booth) {
+        Console.WriteLine("UniqueIdThingThatICanSearchFor" + item.Year);
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year.YearVal)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>

@@ -35,19 +35,19 @@ namespace StJosephBazaar.Pages.Booths
         public async Task<IActionResult> OnPostAsync()
         {
             var emptyBooth = new Booth();
-                if(await TryUpdateModelAsync<Booth>(
-                        emptyBooth,
-                        "booth",
-                        s => s.Id, s=> s.Name, s => s.Friday, s => s.Year, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
+            if(await TryUpdateModelAsync<Booth>(
+                    emptyBooth,
+                    "booth",
+                    s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
 
-                    {
-                        _context.Booth.Add(emptyBooth);
-                        await _context.SaveChangesAsync();
-                        return RedirectToPage("./Index");
-                    }
-
-                    PopulateYearDropDownList(_context, emptyBooth.Year);
-                    return Page();
+                {
+                    _context.Booth.Add(emptyBooth);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("./Index");
                 }
+
+                PopulateYearDropDownList(_context, emptyBooth.YearID);
+                return Page();
+            }
     }
 }
