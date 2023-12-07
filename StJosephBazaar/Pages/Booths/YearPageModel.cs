@@ -19,7 +19,7 @@ namespace StJosephBazaar.Pages.Booths
                                    select d;
 
             YearNameSL = new SelectList(yearQuery.AsNoTracking(),
-                nameof(Year.YearID),
+                nameof(Year.ID),
                 nameof(Year.YearVal),
                 selectedYear);
         }

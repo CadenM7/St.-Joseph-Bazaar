@@ -28,14 +28,14 @@ namespace StJosephBazaar.Pages.Booths
                 return NotFound();
             }
 
-            var booth = await _context.Booth.FirstOrDefaultAsync(m => m.Id == id);
-            if (booth == null)
+            Booth = await _context.Booth
+            .AsNoTracking()
+            .Include(c => c.Year)
+            .FirstOrDefaultAsync(m => m.Id == id);
+            
+            if (Booth == null)
             {
                 return NotFound();
-            }
-            else 
-            {
-                Booth = booth;
             }
             return Page();
         }

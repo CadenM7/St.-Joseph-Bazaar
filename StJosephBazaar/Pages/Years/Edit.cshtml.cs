@@ -30,7 +30,7 @@ namespace StJosephBazaar.Pages.Years
                 return NotFound();
             }
 
-            var year =  await _context.Year.FirstOrDefaultAsync(m => m.YearID == id);
+            var year =  await _context.Year.FirstOrDefaultAsync(m => m.ID == id);
             if (year == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace StJosephBazaar.Pages.Years
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!YearExists(Year.YearID))
+                if (!YearExists(Year.ID))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace StJosephBazaar.Pages.Years
 
         private bool YearExists(int id)
         {
-          return (_context.Year?.Any(e => e.YearID == id)).GetValueOrDefault();
+          return (_context.Year?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

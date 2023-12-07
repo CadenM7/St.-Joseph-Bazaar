@@ -14,11 +14,11 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Booth[0].Year)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Booth[0].Name)
             </th>
-            <td>
-                @Html.DisplayNameFor(model => model.Booth[0].Year)
-            </td>
             <th>
                 @Html.DisplayNameFor(model => model.Booth[0].Friday)
             </th>
@@ -45,10 +45,10 @@
         Console.WriteLine("UniqueIdThingThatICanSearchFor" + item.Year);
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Year.YearVal)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Year)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Friday)
