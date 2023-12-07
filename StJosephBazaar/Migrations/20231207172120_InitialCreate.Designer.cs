@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231207153806_InitialCreate")]
+    [Migration("20231207172120_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -49,6 +49,78 @@ namespace StJosephBazaar.Migrations
                     b.HasIndex("YearID");
 
                     b.ToTable("Booth");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Comparison", b =>
+                {
+                    b.Property<int>("ComparisonID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("AdvanceVariance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("AuctionVariance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CompID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("FridayVariance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("InitID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<decimal>("NetVariance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("SaturdayVariance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YCAdvance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YCAuct")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YCFriday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YCNetIncome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YCSaturday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YIAdvance")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YIAuct")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YIFriday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YINetIncome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("YISaturday")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("YearCompYearID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("YearInitYearID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ComparisonID");
+
+                    b.HasIndex("YearCompYearID");
+
+                    b.HasIndex("YearInitYearID");
+
+                    b.ToTable("Comparison");
                 });
 
             modelBuilder.Entity("StJosephBazaar.Models.Deposit", b =>
@@ -209,6 +281,25 @@ namespace StJosephBazaar.Migrations
                         .IsRequired();
 
                     b.Navigation("Year");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Comparison", b =>
+                {
+                    b.HasOne("StJosephBazaar.Models.Year", "YearComp")
+                        .WithMany()
+                        .HasForeignKey("YearCompYearID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("StJosephBazaar.Models.Year", "YearInit")
+                        .WithMany()
+                        .HasForeignKey("YearInitYearID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("YearComp");
+
+                    b.Navigation("YearInit");
                 });
 
             modelBuilder.Entity("StJosephBazaar.Models.Expense", b =>

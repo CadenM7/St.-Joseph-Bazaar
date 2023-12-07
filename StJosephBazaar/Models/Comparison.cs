@@ -4,9 +4,14 @@ namespace StJosephBazaar.Models;
 
 public class Comparison
 {
-    public int YearInit{get; set;}
+    public int ComparisonID {get; set;}
+    public Year YearInit{get; set;}
 
-    public int YearComp{get; set;}
+    public Year YearComp{get; set;}
+
+    public int InitID{get; set;}
+
+    public int CompID{get; set;}
 
     public decimal YIAdvance{get; set;}
 

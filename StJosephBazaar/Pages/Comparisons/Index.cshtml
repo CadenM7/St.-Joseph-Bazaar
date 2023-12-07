@@ -1,0 +1,132 @@
+@page
+@model StJosephBazaar.Pages.Comparisons.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YearInit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YearComp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YIAdvance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YCAdvance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].AdvanceVariance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YIFriday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YCFriday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].FridayVariance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YISaturday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YCSaturday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].SaturdayVariance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YIAuct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YCAuct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].AuctionVariance)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YINetIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].YCNetIncome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comparison[0].NetVariance)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Comparison) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearInit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YearComp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YIAdvance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YCAdvance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdvanceVariance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YIFriday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YCFriday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FridayVariance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YISaturday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YCSaturday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SaturdayVariance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YIAuct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YCAuct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuctionVariance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YINetIncome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YCNetIncome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NetVariance)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ComparisonID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ComparisonID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ComparisonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -91,6 +91,49 @@ namespace StJosephBazaar.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Comparison",
+                columns: table => new
+                {
+                    ComparisonID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    YearInitYearID = table.Column<int>(type: "INTEGER", nullable: false),
+                    YearCompYearID = table.Column<int>(type: "INTEGER", nullable: false),
+                    InitID = table.Column<int>(type: "INTEGER", nullable: false),
+                    CompID = table.Column<int>(type: "INTEGER", nullable: false),
+                    YIAdvance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YCAdvance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    AdvanceVariance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YIFriday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YCFriday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    FridayVariance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YISaturday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YCSaturday = table.Column<decimal>(type: "TEXT", nullable: false),
+                    SaturdayVariance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YIAuct = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YCAuct = table.Column<decimal>(type: "TEXT", nullable: false),
+                    AuctionVariance = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YINetIncome = table.Column<decimal>(type: "TEXT", nullable: false),
+                    YCNetIncome = table.Column<decimal>(type: "TEXT", nullable: false),
+                    NetVariance = table.Column<decimal>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comparison", x => x.ComparisonID);
+                    table.ForeignKey(
+                        name: "FK_Comparison_Year_YearCompYearID",
+                        column: x => x.YearCompYearID,
+                        principalTable: "Year",
+                        principalColumn: "YearID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Comparison_Year_YearInitYearID",
+                        column: x => x.YearInitYearID,
+                        principalTable: "Year",
+                        principalColumn: "YearID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Expense",
                 columns: table => new
                 {
@@ -143,6 +186,16 @@ namespace StJosephBazaar.Migrations
                 column: "YearID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Comparison_YearCompYearID",
+                table: "Comparison",
+                column: "YearCompYearID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comparison_YearInitYearID",
+                table: "Comparison",
+                column: "YearInitYearID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Expense_BoothID",
                 table: "Expense",
                 column: "BoothID");
@@ -156,6 +209,9 @@ namespace StJosephBazaar.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Comparison");
+
             migrationBuilder.DropTable(
                 name: "Deposit");
 
