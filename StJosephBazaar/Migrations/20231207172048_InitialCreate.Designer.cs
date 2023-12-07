@@ -11,7 +11,7 @@ using StJosephBazaar.Data;
 namespace StJosephBazaar.Migrations
 {
     [DbContext(typeof(BazaarContext))]
-    [Migration("20231207164731_InitialCreate")]
+    [Migration("20231207172048_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -63,29 +63,35 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<decimal>("Dimes")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Dimes")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Fives")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Fives")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Nickels")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Nickels")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Ones")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Ones")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<decimal>("Pennies")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Other_Change")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Quarters")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Pennies")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Tens")
-                        .HasColumnType("TEXT");
+                    b.Property<double>("Quarters")
+                        .HasColumnType("REAL");
 
-                    b.Property<decimal>("Twentys")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("Tens")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Twentys")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
@@ -192,9 +198,8 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Saturday")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("YearVal")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("YearVal")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 

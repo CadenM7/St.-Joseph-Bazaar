@@ -57,13 +57,15 @@ namespace StJosephBazaar.Migrations
                 name: "Year",
                 columns: table => new
                 {
-                    YearID = table.Column<int>(type: "INTEGER", nullable: false)
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    YearVal = table.Column<int>(type: "INTEGER", nullable: false)
+                    YearVal = table.Column<int>(type: "INTEGER", nullable: false),
+                    Friday = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Saturday = table.Column<DateOnly>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Year", x => x.YearID);
+                    table.PrimaryKey("PK_Year", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -72,13 +74,12 @@ namespace StJosephBazaar.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    YearID = table.Column<int>(type: "INTEGER", nullable: false),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     Friday = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Year = table.Column<int>(type: "INTEGER", nullable: false),
                     Saturday = table.Column<decimal>(type: "TEXT", nullable: false),
                     Auction = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false),
-                    YearID = table.Column<int>(type: "INTEGER", nullable: true)
+                    Purchases = table.Column<decimal>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,7 +88,8 @@ namespace StJosephBazaar.Migrations
                         name: "FK_Booth_Year_YearID",
                         column: x => x.YearID,
                         principalTable: "Year",
-                        principalColumn: "YearID");
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

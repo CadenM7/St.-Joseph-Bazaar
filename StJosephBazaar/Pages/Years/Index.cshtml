@@ -16,6 +16,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Year[0].YearVal)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year[0].Friday)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year[0].Saturday)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -24,6 +30,12 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.YearVal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Friday)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Saturday)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

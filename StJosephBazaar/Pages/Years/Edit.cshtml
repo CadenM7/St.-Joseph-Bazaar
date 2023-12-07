@@ -20,6 +20,16 @@
                 <span asp-validation-for="Year.YearVal" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Year.Friday" class="control-label"></label>
+                <input asp-for="Year.Friday" class="form-control" />
+                <span asp-validation-for="Year.Friday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year.Saturday" class="control-label"></label>
+                <input asp-for="Year.Saturday" class="form-control" />
+                <span asp-validation-for="Year.Saturday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

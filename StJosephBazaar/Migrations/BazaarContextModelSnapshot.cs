@@ -60,7 +60,6 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Date")
                         .HasColumnType("TEXT");
 
-<<<<<<< HEAD
                     b.Property<double>("Dimes")
                         .HasColumnType("REAL");
 
@@ -90,31 +89,6 @@ namespace StJosephBazaar.Migrations
 
                     b.Property<int>("Year")
                         .HasColumnType("INTEGER");
-=======
-                    b.Property<decimal>("Dimes")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Fives")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Nickels")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Ones")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Pennies")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Quarters")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Tens")
-                        .HasColumnType("TEXT");
-
-                    b.Property<decimal>("Twentys")
-                        .HasColumnType("TEXT");
->>>>>>> YeaarProgress
 
                     b.HasKey("ID");
 
@@ -221,9 +195,8 @@ namespace StJosephBazaar.Migrations
                     b.Property<DateOnly>("Saturday")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("YearVal")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("YearVal")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
 
