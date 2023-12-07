@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Deposit[0].Year)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Deposit[0].Date)
             </th>
             <th>
@@ -55,6 +58,9 @@
     <tbody>
 @foreach (var item in Model.Deposit) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)
             </td>

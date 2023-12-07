@@ -75,6 +75,9 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("Ones")
                         .HasColumnType("INTEGER");
 
+                    b.Property<double>("Other_Change")
+                        .HasColumnType("REAL");
+
                     b.Property<double>("Pennies")
                         .HasColumnType("REAL");
 
@@ -85,6 +88,9 @@ namespace StJosephBazaar.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Twentys")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Year")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");

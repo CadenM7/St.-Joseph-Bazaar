@@ -17,6 +17,7 @@ namespace StJosephBazaar.Migrations
                 {
                     ID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Year = table.Column<int>(type: "INTEGER", nullable: false),
                     Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
                     Checks = table.Column<decimal>(type: "TEXT", nullable: false),
                     Twentys = table.Column<int>(type: "INTEGER", nullable: false),
@@ -26,7 +27,8 @@ namespace StJosephBazaar.Migrations
                     Quarters = table.Column<double>(type: "REAL", nullable: false),
                     Dimes = table.Column<double>(type: "REAL", nullable: false),
                     Nickels = table.Column<double>(type: "REAL", nullable: false),
-                    Pennies = table.Column<double>(type: "REAL", nullable: false)
+                    Pennies = table.Column<double>(type: "REAL", nullable: false),
+                    Other_Change = table.Column<double>(type: "REAL", nullable: false)
                 },
                 constraints: table =>
                 {

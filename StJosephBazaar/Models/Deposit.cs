@@ -3,6 +3,7 @@ namespace StJosephBazaar.Models
     public class Deposit
     {
         public int ID { get; set; }
+        public int Year {get; set; }
         public DateOnly Date { get; set; }
 
         //Cash
