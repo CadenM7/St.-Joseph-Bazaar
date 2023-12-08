@@ -42,6 +42,10 @@ p{
 table{
   font-family: Tiro Devanagari Marathi;
 }
+.table th{
+  background-color: #ab8cb9;
+  color: white;
+}
 
 .row{
   font-family: Tiro Devanagari Marathi;
