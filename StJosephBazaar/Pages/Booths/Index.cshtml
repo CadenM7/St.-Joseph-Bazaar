@@ -66,7 +66,19 @@
                 @Html.DisplayFor(modelItem => item.Purchases)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Net_Income)
+                @if (item.Net_Income < 0)
+			{
+				<div style="color: Red; font-weight: bold;">
+					@Html.DisplayFor(modelItem => item.Net_Income)
+
+				</div>
+			}
+			else
+			{
+				<div style="color: Green; font-weight: bold;">
+					@Html.DisplayFor(modelItem => item.Net_Income)
+				</div>
+			}
             </td>
             <td>
                 <a ID="return" asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
