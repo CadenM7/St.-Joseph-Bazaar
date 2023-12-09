@@ -87,10 +87,12 @@ namespace StJosephBazaar.Migrations
                     b.Property<int>("Twentys")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Year")
+                    b.Property<int>("YearID")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("YearID");
 
                     b.ToTable("Deposit");
                 });
@@ -207,6 +209,17 @@ namespace StJosephBazaar.Migrations
                 {
                     b.HasOne("StJosephBazaar.Models.Year", "Year")
                         .WithMany("Booths")
+                        .HasForeignKey("YearID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Year");
+                });
+
+            modelBuilder.Entity("StJosephBazaar.Models.Deposit", b =>
+                {
+                    b.HasOne("StJosephBazaar.Models.Year", "Year")
+                        .WithMany()
                         .HasForeignKey("YearID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

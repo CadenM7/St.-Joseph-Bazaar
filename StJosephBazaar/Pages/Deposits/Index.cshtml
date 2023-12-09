@@ -59,7 +59,7 @@
 @foreach (var item in Model.Deposit) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Year)
+                @Html.DisplayFor(modelItem => item.Year.YearVal)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Date)

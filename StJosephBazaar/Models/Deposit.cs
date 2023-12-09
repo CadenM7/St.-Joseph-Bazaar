@@ -3,10 +3,11 @@ namespace StJosephBazaar.Models
     public class Deposit
     {
         public int ID { get; set; }
-        public int Year {get; set; }
+        public int YearID{get;set;}
         public DateOnly Date { get; set; }
 
         //Cash
+        public Year? Year {get;set;}
         public decimal Checks { get; set; }
         public int Twentys { get; set; }
         public int Tens { get; set; }

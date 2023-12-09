@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 using StJosephBazaar.Pages.Booths;
-using StJosephBazaar.Pages.Courses;
 
 namespace StJosephBazaar.Pages.Booths
 {

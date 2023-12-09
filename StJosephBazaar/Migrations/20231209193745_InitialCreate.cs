@@ -12,30 +12,6 @@ namespace StJosephBazaar.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Deposit",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Year = table.Column<int>(type: "INTEGER", nullable: false),
-                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
-                    Checks = table.Column<decimal>(type: "TEXT", nullable: false),
-                    Twentys = table.Column<int>(type: "INTEGER", nullable: false),
-                    Tens = table.Column<int>(type: "INTEGER", nullable: false),
-                    Fives = table.Column<int>(type: "INTEGER", nullable: false),
-                    Ones = table.Column<int>(type: "INTEGER", nullable: false),
-                    Quarters = table.Column<double>(type: "REAL", nullable: false),
-                    Dimes = table.Column<double>(type: "REAL", nullable: false),
-                    Nickels = table.Column<double>(type: "REAL", nullable: false),
-                    Pennies = table.Column<double>(type: "REAL", nullable: false),
-                    Other_Change = table.Column<double>(type: "REAL", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Deposit", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Startup",
                 columns: table => new
                 {
@@ -93,6 +69,36 @@ namespace StJosephBazaar.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Deposit",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    YearID = table.Column<int>(type: "INTEGER", nullable: false),
+                    Date = table.Column<DateOnly>(type: "TEXT", nullable: false),
+                    Checks = table.Column<decimal>(type: "TEXT", nullable: false),
+                    Twentys = table.Column<int>(type: "INTEGER", nullable: false),
+                    Tens = table.Column<int>(type: "INTEGER", nullable: false),
+                    Fives = table.Column<int>(type: "INTEGER", nullable: false),
+                    Ones = table.Column<int>(type: "INTEGER", nullable: false),
+                    Quarters = table.Column<double>(type: "REAL", nullable: false),
+                    Dimes = table.Column<double>(type: "REAL", nullable: false),
+                    Nickels = table.Column<double>(type: "REAL", nullable: false),
+                    Pennies = table.Column<double>(type: "REAL", nullable: false),
+                    Other_Change = table.Column<double>(type: "REAL", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Deposit", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Deposit_Year_YearID",
+                        column: x => x.YearID,
+                        principalTable: "Year",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Expense",
                 columns: table => new
                 {
@@ -142,6 +148,11 @@ namespace StJosephBazaar.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Booth_YearID",
                 table: "Booth",
+                column: "YearID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Deposit_YearID",
+                table: "Deposit",
                 column: "YearID");
 
             migrationBuilder.CreateIndex(

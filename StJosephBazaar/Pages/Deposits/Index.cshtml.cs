@@ -25,7 +25,8 @@ namespace StJosephBazaar.Pages.Deposits
         {
             if (_context.Deposit != null)
             {
-                Deposit = await _context.Deposit.ToListAsync();
+                Deposit = await _context.Deposit.Include(e => e.Year).ToListAsync();
+    
             }
         }
     }

@@ -10,7 +10,7 @@ using StJosephBazaar.Models;
 
 namespace StJosephBazaar.Pages.Deposits
 {
-    public class CreateModel : PageModel
+    public class CreateModel : YearPageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
@@ -18,9 +18,9 @@ namespace StJosephBazaar.Pages.Deposits
         {
             _context = context;
         }
-
         public IActionResult OnGet()
         {
+            PopulateYearDropDownList(_context);
             return Page();
         }
 
@@ -36,10 +36,20 @@ namespace StJosephBazaar.Pages.Deposits
                 return Page();
             }
 
-            _context.Deposit.Add(Deposit);
-            await _context.SaveChangesAsync();
+            var emptyDeposit = new Deposit();
+            if(await TryUpdateModelAsync<Deposit>(
+                    emptyDeposit,
+                    "deposit",
+                    s => s.YearID, s=> s.Checks, s => s.Twentys, s=> s.Tens, s => s.Fives, s => s.Ones, s => s.Quarters, s => s.Dimes, s => s.Nickels, s => s.Pennies, s => s.Other_Change))
 
-            return RedirectToPage("./Index");
+                {
+                    _context.Deposit.Add(emptyDeposit);
+                    await _context.SaveChangesAsync();
+                    return RedirectToPage("./Index");
+                }
+
+                PopulateYearDropDownList(_context, emptyDeposit.YearID);
+                return Page();
         }
     }
 }
