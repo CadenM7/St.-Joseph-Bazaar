@@ -46,6 +46,9 @@ table{
   background-color: #ab8cb9;
   color: white;
 }
+.table th, .table td{
+  border: 1pt solid black;
+}
 
 .row{
   font-family: Tiro Devanagari Marathi;
@@ -62,3 +65,4 @@ input{
 #return{
   font-family: Tiro Devanagari Marathi;
 }
+

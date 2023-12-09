@@ -8,6 +8,10 @@ a.navbar-brand {
   word-break: break-all;
 }
 
+nav.navbar{
+  background-color: #662e80;
+}
+
 a {
   font-family: Tiro Devanagari Marathi;
   color: #0077cc;
