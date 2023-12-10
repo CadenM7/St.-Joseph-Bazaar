@@ -35,6 +35,7 @@ namespace StJosephBazaar.Pages.Booths
         public async Task<IActionResult> OnPostAsync()
         {
             var emptyBooth = new Booth();
+            var emptyStartup = new Startup();
             if(await TryUpdateModelAsync<Booth>(
                     emptyBooth,
                     "booth",
@@ -42,6 +43,8 @@ namespace StJosephBazaar.Pages.Booths
 
                 {
                     _context.Booth.Add(emptyBooth);
+                    emptyStartup.BoothName = emptyBooth.Name;
+                    _context.Startup.Add(emptyStartup);
                     await _context.SaveChangesAsync();
                     return RedirectToPage("./Index");
                 }

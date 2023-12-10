@@ -1,0 +1,29 @@
+using StJosephBazaar.Data;
+using StJosephBazaar.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
+
+namespace StJosephBazaar.Pages.Deposits
+{
+    public class DatePageModel : PageModel
+    {
+        public SelectList DateNameSL { get; set; }
+
+        public void PopulateDateDropDownList(BazaarContext _context,
+            object selectedDate = null)
+        {
+            var dateQuery = from d in _context.Year
+                                   orderby d.Friday
+                                   orderby d.Saturday // Sort by name.
+                                   select d;
+
+            YearNameSL = new SelectList(yearQuery.AsNoTracking(),
+                nameof(Year.ID),
+                nameof(Year.Friday),
+                nameof(Year.Saturday),
+                selectedDate);
+        }
+    }
+}

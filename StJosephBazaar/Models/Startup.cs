@@ -6,6 +6,7 @@ namespace StJosephBazaar.Models;
 public class Startup
 {
     public int ID { get; set; }
+    [Display(Name = "Booth")]
     public string? BoothName { get; set;}
     public int Twenties { get; set; }
     public int Tens { get; set; }
