@@ -6,7 +6,7 @@ public class Year
 {
     public int ID{get;set;}
 
-    public int YearVal{get;set;}
+    public string YearVal{get;set;}
 
     public DateOnly Friday{get; set;}
 
