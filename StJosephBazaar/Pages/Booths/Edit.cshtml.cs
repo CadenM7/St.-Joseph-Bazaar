@@ -61,7 +61,7 @@ namespace StJosephBazaar.Pages.Booths
             if(await TryUpdateModelAsync<Booth>(
                 boothToUpdate,
                 "booth",
-                s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
+                s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Net_Income))
             {
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");

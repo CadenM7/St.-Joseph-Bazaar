@@ -60,15 +60,20 @@
                 @Html.DisplayFor(modelItem => item.Auction)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Gross_Revenue)
+                <div style="color: Green; font-weight: bold;">
+					@Html.DisplayFor(modelItem => item.Gross_Revenue)
+				</div>
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Purchases)
+                <div style="color: Red;font-weight: bold;">
+					@Html.DisplayFor(modelItem => item.Purchases)
+
+				</div>
             </td>
             <td>
                 @if (item.Net_Income < 0)
 			{
-				<div style="color: Red; font-weight: bold;">
+				<div style="color: Red;font-weight: bold;">
 					@Html.DisplayFor(modelItem => item.Net_Income)
 
 				</div>

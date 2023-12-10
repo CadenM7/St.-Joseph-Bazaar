@@ -19,6 +19,7 @@ namespace StJosephBazaar.Pages.Booths
         {
             _context = context;
         }
+        
 
         public IActionResult OnGet()
         {
@@ -37,7 +38,7 @@ namespace StJosephBazaar.Pages.Booths
             if(await TryUpdateModelAsync<Booth>(
                     emptyBooth,
                     "booth",
-                    s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Income, s => s.Net_Income))
+                    s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Net_Income))
 
                 {
                     _context.Booth.Add(emptyBooth);

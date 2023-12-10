@@ -21,12 +21,15 @@ namespace StJosephBazaar.Pages.Booths
 
         public IList<Booth> Booth { get;set; } = default!;
 
+        public IList<Income> Incomes { get;set; } = default!;
+
+
         public async Task OnGetAsync()
         {
             if (_context.Booth != null)
             {
                 Booth = await _context.Booth.Include(e => e.Year).ToListAsync();
-            }
         }
     }
+}
 }

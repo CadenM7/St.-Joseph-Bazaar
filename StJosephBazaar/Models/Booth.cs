@@ -26,5 +26,4 @@ public class Booth
             return (decimal)(Gross_Revenue - Purchases);
         }
     }
-    
 }
