@@ -47,7 +47,10 @@ table{
   color: white;
 }
 .table th, .table td{
-  border: 1pt solid black;
+  border: 1pt solid whitesmoke;
+}
+.table tr:nth-child(even){
+  background-color: lavender;
 }
 
 .row{
