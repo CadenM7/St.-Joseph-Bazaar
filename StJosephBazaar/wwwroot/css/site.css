@@ -50,8 +50,8 @@ table{
   font-family: Tiro Devanagari Marathi;
 }
 .table th{
-  background-color: #ab8cb9;
-  color: white;
+  background-color: #5B1586;
+  color: #FCAC14;
 }
 .table th, .table td{
   border: 1pt solid whitesmoke;
@@ -80,5 +80,6 @@ input{
 #return{
   font-family: Tiro Devanagari Marathi;
   color: purple;
+  padding: 2px;
 }
 
