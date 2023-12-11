@@ -7,9 +7,13 @@
 
 <h1>Booths</h1>
 
+<p>
+    <a ID="return" asp-page="Create">Create New</a>
+</p>
+
 <form asp-page="./Index" method="get">
     <div class="form-actions no-color">
-        <p>
+        <p ID="find">
             Find by Year:
             <input type="text" name="SearchString" value="@Model.CurrentFilter" />
             <input type="submit" value="Search" class="btn btn-primary" /> |
@@ -18,9 +22,7 @@
     </div>
 </form>
 
-<p>
-    <a ID="return" asp-page="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
