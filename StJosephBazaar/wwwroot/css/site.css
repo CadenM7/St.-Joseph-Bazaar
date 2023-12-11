@@ -63,6 +63,8 @@ input{
 
 .btn-primary{
   font-family: Tiro Devanagari Marathi;
+  background-color: #5B1586;
+  border-color: #5B1586;
 }
 
 #return{
