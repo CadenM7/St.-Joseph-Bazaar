@@ -59,10 +59,10 @@ namespace StJosephBazaar.Pages.Years
                     }
                 } else {
                     Console.WriteLine("UniqueFailureMessage");
+                    _context.Year.Add(newYear);
                 }
                 Year.YearRef = null;
                 Year.RefId = -1;
-                //  _context.Year.Add(newYear);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }

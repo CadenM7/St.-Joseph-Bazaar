@@ -47,6 +47,7 @@ namespace StJosephBazaar.Pages.Booths
 
              if (!String.IsNullOrEmpty(searchString))
             {
+                Console.WriteLine("Searching for Matching Years" + searchString);
                 yearIQ = yearIQ.Where(s => s.YearVal.Contains(searchString));
             }
 
