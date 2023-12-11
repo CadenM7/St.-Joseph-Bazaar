@@ -1,0 +1,124 @@
+@page
+@model StJosephBazaar.Pages.Comparisons.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Comparison</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @* <div class="form-group">
+                <label asp-for="Comparison.YearInit" class="control-label"></label>
+                <input asp-for="Comparison.YearInit" class="form-control" />
+                <span asp-validation-for="Comparison.YearInit" class="text-danger"></span>
+            </div>
+            *@
+            <div class="form-group">
+                <label asp-for="Comparison.YearInit" class="control-label"></label>
+                <select asp-for="Comparison.InitID" class="form-control"
+                        asp-items="@Model.YearNameSL">
+                    <option value="">-- Select Year --</option>
+                </select>
+                <span asp-validation-for="Comparison.InitID" class="text-danger" />
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Comparison.YearComp" class="control-label"></label>
+                <input asp-for="Comparison.YearComp" class="form-control" />
+                <span asp-validation-for="Comparison.YearComp" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <label asp-for="Comparison.YIAdvance" class="control-label"></label>
+                <input asp-for="Comparison.YIAdvance" class="form-control" />
+                <span asp-validation-for="Comparison.YIAdvance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YCAdvance" class="control-label"></label>
+                <input asp-for="Comparison.YCAdvance" class="form-control" />
+                <span asp-validation-for="Comparison.YCAdvance" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+                <label asp-for="Comparison.AdvanceVariance" class="control-label"></label>
+                <input asp-for="Comparison.AdvanceVariance" class="form-control" />
+                <span asp-validation-for="Comparison.AdvanceVariance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YIFriday" class="control-label"></label>
+                <input asp-for="Comparison.YIFriday" class="form-control" />
+                <span asp-validation-for="Comparison.YIFriday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YCFriday" class="control-label"></label>
+                <input asp-for="Comparison.YCFriday" class="form-control" />
+                <span asp-validation-for="Comparison.YCFriday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.FridayVariance" class="control-label"></label>
+                <input asp-for="Comparison.FridayVariance" class="form-control" />
+                <span asp-validation-for="Comparison.FridayVariance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YISaturday" class="control-label"></label>
+                <input asp-for="Comparison.YISaturday" class="form-control" />
+                <span asp-validation-for="Comparison.YISaturday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YCSaturday" class="control-label"></label>
+                <input asp-for="Comparison.YCSaturday" class="form-control" />
+                <span asp-validation-for="Comparison.YCSaturday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.SaturdayVariance" class="control-label"></label>
+                <input asp-for="Comparison.SaturdayVariance" class="form-control" />
+                <span asp-validation-for="Comparison.SaturdayVariance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YIAuct" class="control-label"></label>
+                <input asp-for="Comparison.YIAuct" class="form-control" />
+                <span asp-validation-for="Comparison.YIAuct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YCAuct" class="control-label"></label>
+                <input asp-for="Comparison.YCAuct" class="form-control" />
+                <span asp-validation-for="Comparison.YCAuct" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.AuctionVariance" class="control-label"></label>
+                <input asp-for="Comparison.AuctionVariance" class="form-control" />
+                <span asp-validation-for="Comparison.AuctionVariance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YINetIncome" class="control-label"></label>
+                <input asp-for="Comparison.YINetIncome" class="form-control" />
+                <span asp-validation-for="Comparison.YINetIncome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.YCNetIncome" class="control-label"></label>
+                <input asp-for="Comparison.YCNetIncome" class="form-control" />
+                <span asp-validation-for="Comparison.YCNetIncome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Comparison.NetVariance" class="control-label"></label>
+                <input asp-for="Comparison.NetVariance" class="form-control" />
+                <span asp-validation-for="Comparison.NetVariance" class="text-danger"></span>
+            </div>
+            *@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

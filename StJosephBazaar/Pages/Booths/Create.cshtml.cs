@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 using StJosephBazaar.Pages.Booths;
@@ -42,8 +43,14 @@ namespace StJosephBazaar.Pages.Booths
                     s => s.YearID, s=> s.Name, s => s.Friday, s => s.Saturday, s => s.Auction, s => s.Gross_Revenue, s => s.Purchases, s => s.Expenses, s => s.Net_Income))
 
                 {
-                    _context.Booth.Add(emptyBooth);
+                    Year yearBind = _context.Year.Include(y => y.Booths).Where(y => y.ID == emptyBooth.YearID).FirstOrDefault();
+                    Console.WriteLine("Unique Unidentifier" + " " + yearBind.YearVal);
+                    if(yearBind.Booths != null){
+                        yearBind.Booths.Add(Booth);
+                    }
+                    Console.WriteLine("UniqueIdentifier" + yearBind.Booths.Count);
                     emptyStartup.BoothName = emptyBooth.Name;
+                    //_context.Booth.Add(emptyBooth);
                     _context.Startup.Add(emptyStartup);
                     await _context.SaveChangesAsync();
                     return RedirectToPage("./Index");

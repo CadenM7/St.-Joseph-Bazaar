@@ -5,12 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
+using NuGet.Protocol.Plugins;
 using StJosephBazaar.Data;
 using StJosephBazaar.Models;
 
 namespace StJosephBazaar.Pages.Years
 {
-    public class CreateModel : PageModel
+    public class CreateModel : YearPageModel
     {
         private readonly StJosephBazaar.Data.BazaarContext _context;
 
@@ -21,25 +24,52 @@ namespace StJosephBazaar.Pages.Years
 
         public IActionResult OnGet()
         {
+            PopulateYearDropDownList(_context);
             return Page();
         }
 
         [BindProperty]
-        public Year Year { get; set; } = default!;
-        
+        public Year Year {get; set;}
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Year == null || Year == null)
+            Year newYear = new Year();
+            if (await TryUpdateModelAsync<Year>(
+                    newYear,
+                    "year",
+                    s => s.Friday, s => s.Saturday, s => s.ID, s => s.YearVal, s => s.Booths))
+
             {
-                return Page();
+                newYear.Booths = new HashSet<Booth>();
+                Console.WriteLine("UniqueIdTHINGIES" + Year.RefId);
+                Year yearBind = _context.Year.Include(y => y.Booths).Where(y => y.ID == Year.RefId).FirstOrDefault();
+
+                if (yearBind != null)
+                {
+                    foreach (Booth booth in yearBind.Booths)
+                    {
+                        Booth newBooth = new Booth();
+                        newBooth.Year = Year;
+                        newBooth.Name = booth.Name;
+                        newBooth.YearID = Year.ID;
+                        newYear.Booths.Add(newBooth);
+                        _context.Booth.Add(newBooth);
+                    }
+                } else {
+                    Console.WriteLine("UniqueFailureMessage");
+                }
+                Year.YearRef = null;
+                Year.RefId = -1;
+                _context.Year.Add(newYear);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
             }
 
-            _context.Year.Add(Year);
-            await _context.SaveChangesAsync();
-
-            return RedirectToPage("./Index");
+            PopulateYearDropDownList(_context);
+            return Page();
         }
     }
+
 }

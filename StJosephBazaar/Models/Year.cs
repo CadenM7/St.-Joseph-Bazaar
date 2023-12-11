@@ -8,6 +8,10 @@ public class Year
 
     public string YearVal{get;set;}
 
+    public Year? YearRef{get; set;}
+
+    public int? RefId{get; set;}
+
     public DateOnly Friday{get; set;}
 
     public DateOnly Saturday{get;set;}
