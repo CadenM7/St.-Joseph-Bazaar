@@ -46,7 +46,7 @@ namespace StJosephBazaar.Pages.Booths
                     Year yearBind = _context.Year.Include(y => y.Booths).Where(y => y.ID == emptyBooth.YearID).FirstOrDefault();
                     Console.WriteLine("Unique Unidentifier" + " " + yearBind.YearVal);
                     if(yearBind.Booths != null){
-                        yearBind.Booths.Add(Booth);
+                        yearBind.Booths.Add(emptyBooth);
                     }
                     Console.WriteLine("UniqueIdentifier" + yearBind.Booths.Count);
                     emptyStartup.BoothName = emptyBooth.Name;
