@@ -62,7 +62,7 @@ namespace StJosephBazaar.Pages.Years
                 }
                 Year.YearRef = null;
                 Year.RefId = -1;
-                //_context.Year.Add(newYear);
+                //  _context.Year.Add(newYear);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("./Index");
             }
