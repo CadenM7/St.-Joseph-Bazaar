@@ -82,6 +82,9 @@ input{
   color: purple;
   padding: 2px;
 }
+#private{
+  color: #f6c364
+}
 
 #filter{
   color: #f9bb49;
