@@ -38,6 +38,10 @@ h1, h3, h4{
 p{
   font-family: Tiro Devanagari Marathi;
 }
+a.btn.btn-primary.disabled{
+  background-color: #5B1586;
+  border-color: #5B1586;
+}
 
 table{
   font-family: Tiro Devanagari Marathi;
