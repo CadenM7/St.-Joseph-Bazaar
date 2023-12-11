@@ -54,7 +54,7 @@ namespace StJosephBazaar.Pages.Years
                         newBooth.Year = Year;
                         newBooth.Name = booth.Name;
                         newBooth.YearID = Year.ID;
-                        newYear.Booths.Add(newBooth);
+                        // newYear.Booths.Add(newBooth);
                         _context.Booth.Add(newBooth);
                     }
                 } else {
