@@ -8,7 +8,7 @@
 <h1>Years</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a ID="return" asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -38,9 +38,9 @@
                 @Html.DisplayFor(modelItem => item.Saturday)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a ID="return" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a ID="return" asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a ID="return" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }
