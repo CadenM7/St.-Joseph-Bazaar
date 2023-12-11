@@ -35,7 +35,7 @@
                 @Html.DisplayNameFor(model => model.Expense[0].CheckNum)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                <a ID="filter" asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Expense[0].Date)
                 </a>
@@ -44,7 +44,7 @@
                 @Html.DisplayNameFor(model => model.Expense[0].Description)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.TotalSort"
+                <a ID="filter" asp-page="./Index" asp-route-sortOrder="@Model.TotalSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Expense[0].Total)
                 </a>

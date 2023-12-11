@@ -32,7 +32,7 @@
                 @Html.DisplayNameFor(model => model.Income[0].RecieptNum)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                <a ID="filter" asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Income[0].Date)
                 </a>
@@ -41,7 +41,7 @@
                 @Html.DisplayNameFor(model => model.Income[0].HourCollected)
             </th>
             <th>
-                <a asp-page="./Index" asp-route-sortOrder="@Model.TotalSort"
+                <a ID="filter" asp-page="./Index" asp-route-sortOrder="@Model.TotalSort"
                    asp-route-currentFilter="@Model.CurrentFilter">
                     @Html.DisplayNameFor(model => model.Income[0].Total)
                 </a>
